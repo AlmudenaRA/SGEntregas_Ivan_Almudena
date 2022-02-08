@@ -1,0 +1,22 @@
+﻿<Window x:Class="SGEntregas_Ivan_Almudena.Ventanas.Escritorio.DetallesPedido"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Escritorio"
+        mc:Ignorable="d"
+        Title="DetallesPedido" Height="500" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="theRootCanvas" Grid.Row="3">
+            <Border Background="White" BorderBrush="Black" BorderThickness="2" Height="150" Width="200" Canvas.Top="10" Canvas.Left="10">
+                <InkCanvas Name="firmaCanvas"></InkCanvas>
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>
