@@ -72,12 +72,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ClientesCollection.cs" />
     <Compile Include="pedidos.cs">
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="provincias.cs">
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\DetallesPedido.xaml.cs">
+      <DependentUpon>DetallesPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\PedidosCliente.xaml.cs">
+      <DependentUpon>PedidosCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\SeleccionarCliente.xaml.cs">
+      <DependentUpon>SeleccionarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CollectionViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +111,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Ventanas\Escritorio\DetallesPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\PedidosCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\SeleccionarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -150,5 +173,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
