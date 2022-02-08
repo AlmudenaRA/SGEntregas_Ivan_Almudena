@@ -67,6 +67,7 @@
     <Compile Include="clientes.cs">
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Comandos.cs" />
     <Compile Include="EntregasModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +147,9 @@
       <DependentUpon>EntregasModel.edmx</DependentUpon>
       <LastGenOutput>EntregasModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\exit.jpeg" />
+    <Resource Include="images\pc.jpeg" />
+    <Resource Include="images\tablet.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
