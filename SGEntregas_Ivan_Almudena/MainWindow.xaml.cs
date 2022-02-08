@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.Ventanas.Escritorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace SGEntregas_Ivan_Almudena
         public MainWindow()
         {
             InitializeComponent();
+            abrirVentanaSeleccionarCliente();
+        }
+
+        private void abrirVentanaSeleccionarCliente()
+        {
+            SeleccionarCliente frm = new SeleccionarCliente();
+            frm.ShowDialog();
         }
     }
 }
