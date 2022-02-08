@@ -24,5 +24,25 @@ namespace SGEntregas_Ivan_Almudena
         {
             InitializeComponent();
         }
+
+        private void btnTablet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CompruebaExit(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void EjecutaExit(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
