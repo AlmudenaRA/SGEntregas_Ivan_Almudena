@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena"
         mc:Ignorable="d"
-        Title="Entregas" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Entregas" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Window.CommandBindings>
         <CommandBinding Command="local:Comandos.Exit" CanExecute="CompruebaExit" Executed="EjecutaExit"/>
     </Window.CommandBindings>
@@ -14,8 +14,15 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="20"/>
+            <Setter Property="BorderThickness" Value="0"/>            
         </Style>
     </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="1"/>
+            <GradientStop Color="#FF46CC8D"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -25,8 +32,8 @@
             <RowDefinition/>
             <RowDefinition Height="0.3*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnTablet" Click="btnTablet_Click">
-            <Image Source="images\tablet.jpeg" Stretch="Fill" Width="300"/>
+        <Button x:Name="btnTablet" Click="btnTablet_Click" >
+            <Image Source="images\tablet.jpeg" Stretch="Fill" Width="300" />
         </Button>
         <Button x:Name="btnPc" Grid.Column="1" Click="btnPc_Click">
             <Image Source="images\pc.jpeg" Stretch="Fill" Width="300"/>
