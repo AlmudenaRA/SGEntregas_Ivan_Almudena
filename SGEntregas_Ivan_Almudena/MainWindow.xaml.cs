@@ -32,7 +32,8 @@ namespace SGEntregas_Ivan_Almudena
 
         private void btnPc_Click(object sender, RoutedEventArgs e)
         {
-
+            MenuPC menu_pc = new MenuPC();
+            menu_pc.ShowDialog();
         }
 
         private void CompruebaExit(object sender, CanExecuteRoutedEventArgs e)
