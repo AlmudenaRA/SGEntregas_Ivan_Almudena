@@ -36,5 +36,10 @@ namespace SGEntregas_Ivan_Almudena
             SeleccionarCliente frm = new SeleccionarCliente();
             frm.ShowDialog();
         }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
