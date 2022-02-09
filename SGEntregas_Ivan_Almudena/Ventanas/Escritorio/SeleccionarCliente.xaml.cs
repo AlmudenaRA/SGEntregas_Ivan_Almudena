@@ -54,7 +54,8 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             if (cmbUsuarios.SelectedIndex != -1)
             {
                 string dni = id_clientes[cmbUsuarios.SelectedIndex].ToString();
-                PedidosCliente frm = new PedidosCliente(cmbUsuarios.SelectedItem.ToString(), dni);
+                string nombre_apellidos = cmbUsuarios.SelectedItem.ToString();
+                PedidosCliente frm = new PedidosCliente(nombre_apellidos, dni);
                 frm.ShowDialog();
             }
         }
