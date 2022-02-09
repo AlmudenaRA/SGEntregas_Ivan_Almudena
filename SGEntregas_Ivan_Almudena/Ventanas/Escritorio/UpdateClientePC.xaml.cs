@@ -1,5 +1,4 @@
-﻿using SGEntregas_Ivan_Almudena.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +15,13 @@ using System.Windows.Shapes;
 namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 {
     /// <summary>
-    /// Lógica de interacción para PedidosCliente.xaml
+    /// Lógica de interacción para UpdateClientePC.xaml
     /// </summary>
-    public partial class PedidosCliente : Window
+    public partial class UpdateClientePC : Window
     {
-        CollectionViewModel cvm;
-        public PedidosCliente(string nombre_apellidos, string dni)
+        public UpdateClientePC()
         {
             InitializeComponent();
-            cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
-            txtNyA.Text = nombre_apellidos;
-            this.cvm.CargarPedidosCliente(dni);
         }
     }
 }
