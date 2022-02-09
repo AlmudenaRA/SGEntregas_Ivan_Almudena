@@ -48,7 +48,7 @@
             <Image Source="images\pedidos.png" Stretch="Fill" />
         </Button> 
         <Button x:Name="btnVolver" Grid.Column="1" Grid.Row="2" Height="60" Width="60" 
-                HorizontalAlignment="Right" Click="btnVolver_Click" >
+                HorizontalAlignment="Right" Click="btnVolver_Click">
             <Image Source="images\return.png" Stretch="Fill" />
         </Button>        
     </Grid>
