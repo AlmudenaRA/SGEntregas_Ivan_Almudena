@@ -36,7 +36,8 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void EjecutaAnadir(object sender, ExecutedRoutedEventArgs e)
         {
-
+            AddClientesPC addClien = new AddClientesPC(cvm);
+            addClien.ShowDialog();
         }
 
         private void CompruebaModificar(object sender, CanExecuteRoutedEventArgs e)
