@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Escritorio"
         mc:Ignorable="d"
-        Title="AddClientesPC" Height="550" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        Title="AddClientesPC" Height="550" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="TextTrimming" Value="WordEllipsis"/>
@@ -24,6 +24,8 @@
         <Style TargetType="Button">
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="#FF46CC8D"/>
+            <Setter Property="BorderBrush" Value="#FF46CC8D"/>           
         </Style>
     </Window.Resources>
     <Window.Background>
