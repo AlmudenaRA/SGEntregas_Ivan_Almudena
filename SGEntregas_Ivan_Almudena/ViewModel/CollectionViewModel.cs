@@ -12,7 +12,7 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
     public class CollectionViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        private ClientesCollection _listaClientes = new ClientesCollection();
         private entregasEntities _objBD = new entregasEntities();
 
         public entregasEntities objBD
@@ -29,14 +29,14 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             }
         }
 
-        private ClientesCollection _listaclientes;
-
+       
         public ClientesCollection ListaClientes
         {
-            get { return _listaclientes; }
-            set { _listaclientes = value; }
+            get { return _listaClientes; }
+            set { _listaClientes = value;
+                notifyPropertyChanged();
+            }
         }
-
 
         public CollectionViewModel()
         {
@@ -45,14 +45,18 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
 
         private void cargarDatosClientes()
         {
-            using (entregasEntities objbd = new entregasEntities())
+            ListaClientes.Clear();
+            
+            var q = from p in objBD.clientes select p;
+            foreach (var p in q.ToList())
             {
-                var q = from p in objBD.clientes select p;
-                foreach (var p in q.ToList())
-                {
-                    ListaClientes.Add(p);
-                }
-            }
+                ListaClientes.Add(p);
+            }            
+        }
+
+        public void guardarDatos()
+        {
+            objBD.SaveChanges();
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -73,7 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MenuPC.xaml.cs">
+    <Compile Include="Utils.cs" />
+    <Compile Include="Ventanas\Escritorio\AddClientesPC.xaml.cs">
+      <DependentUpon>AddClientesPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\MenuPC.xaml.cs">
       <DependentUpon>MenuPC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ClientesCollection.cs" />
@@ -85,6 +90,9 @@
     </Compile>
     <Compile Include="Ventanas\Escritorio\DetallesPedido.xaml.cs">
       <DependentUpon>DetallesPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\GestionClientesPC.xaml.cs">
+      <DependentUpon>GestionClientesPC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Escritorio\PedidosCliente.xaml.cs">
       <DependentUpon>PedidosCliente.xaml</DependentUpon>
@@ -115,7 +123,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Ventanas\Escritorio\AddClientesPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\Escritorio\DetallesPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\GestionClientesPC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,7 +143,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuPC.xaml">
+    <Page Include="Ventanas\Escritorio\MenuPC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

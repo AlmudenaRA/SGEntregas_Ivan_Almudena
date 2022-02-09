@@ -23,14 +23,7 @@ namespace SGEntregas_Ivan_Almudena
     {
         public MainWindow()
         {
-            InitializeComponent();
-            abrirVentanaSeleccionarCliente();
-        }
-
-        private void abrirVentanaSeleccionarCliente()
-        {
-            SeleccionarCliente frm = new SeleccionarCliente();
-            frm.ShowDialog();
+            InitializeComponent();            
         }
 
         private void btnTablet_Click(object sender, RoutedEventArgs e)

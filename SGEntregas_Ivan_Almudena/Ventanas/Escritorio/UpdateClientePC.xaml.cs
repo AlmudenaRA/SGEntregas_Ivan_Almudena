@@ -12,26 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SGEntregas_Ivan_Almudena
+namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 {
     /// <summary>
-    /// Lógica de interacción para MenuPC.xaml
+    /// Lógica de interacción para UpdateClientePC.xaml
     /// </summary>
-    public partial class MenuPC : Window
+    public partial class UpdateClientePC : Window
     {
-        public MenuPC()
+        public UpdateClientePC()
         {
             InitializeComponent();
-        }
-
-        private void btnGestCliente_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnGestPedido_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

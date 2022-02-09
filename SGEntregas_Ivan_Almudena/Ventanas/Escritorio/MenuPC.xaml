@@ -40,10 +40,10 @@
         <TextBlock Text="Clientes"/>
         <TextBlock Text="Pedidos" Grid.Column="1"/>
         <Button x:Name="btnGestCliente" Grid.Row="1" Click="btnGestCliente_Click">
-            <Image Source="images\clientes.png" Stretch="Fill"/>
+            <Image Source="/images/clientes.png" Stretch="Fill"/>
         </Button>
         <Button x:Name="btnGestPedido" Grid.Column="1"  Grid.Row="1" Click="btnGestPedido_Click" >
-            <Image Source="images\pedidos.png" Stretch="Fill" />
+            <Image Source="/images/pedidos.png" Stretch="Fill" />
         </Button>        
     </Grid>
 </Window>

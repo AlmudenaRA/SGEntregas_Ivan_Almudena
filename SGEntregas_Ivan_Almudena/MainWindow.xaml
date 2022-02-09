@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena"
         mc:Ignorable="d"
-        Title="Entregas" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+        Title="Entregas" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
         <CommandBinding Command="local:Comandos.Exit" CanExecute="CompruebaExit" Executed="EjecutaExit"/>
     </Window.CommandBindings>
