@@ -39,7 +39,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
                 foreach (var e in q.ToList())
                 {
-                    cmbUsuarios.Items.Add(e.nombre + " " + e.apellidos);
+                    cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);
                     id_clientes.Add(e.dni);
                 }
             }
@@ -47,6 +47,17 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void cmbUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+        }
+
+        private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmbUsuarios.SelectedIndex != -1)
+            {
+                string dni = id_clientes[cmbUsuarios.SelectedIndex].ToString();
+                string nombre_apellidos = cmbUsuarios.SelectedItem.ToString();
+                PedidosCliente frm = new PedidosCliente(nombre_apellidos, dni);
+                frm.ShowDialog();
+            }
         }
     }
 }
