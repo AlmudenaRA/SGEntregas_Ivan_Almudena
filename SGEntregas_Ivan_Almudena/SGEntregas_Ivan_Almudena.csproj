@@ -154,6 +154,7 @@
       <DependentUpon>EntregasModel.edmx</DependentUpon>
       <LastGenOutput>EntregasModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\return.png" />
     <Resource Include="images\pedidos.png" />
     <Resource Include="images\clientes.png" />
     <Resource Include="images\exit.jpeg" />
