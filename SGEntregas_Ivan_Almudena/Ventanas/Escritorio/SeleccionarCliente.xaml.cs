@@ -48,5 +48,16 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         private void cmbUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
+
+        private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmbUsuarios.SelectedIndex != -1)
+            {
+                string dni = id_clientes[cmbUsuarios.SelectedIndex].ToString();
+                cvm.CargarPedidosCliente(dni);
+                PedidosCliente frm = new PedidosCliente(cvm, cmbUsuarios.SelectedItem.ToString());
+                frm.ShowDialog();
+            }
+        }
     }
 }
