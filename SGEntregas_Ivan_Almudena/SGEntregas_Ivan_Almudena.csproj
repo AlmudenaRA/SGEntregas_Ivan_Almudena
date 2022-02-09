@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PedidosCollection.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Ventanas\Escritorio\AddClientesPC.xaml.cs">
       <DependentUpon>AddClientesPC.xaml</DependentUpon>
