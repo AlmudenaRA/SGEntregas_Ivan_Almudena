@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Escritorio"
         mc:Ignorable="d"
+        xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         Title="Ventana_Pedidos_Cliente" Height="450" Width="800">
 
     <Window.Background>
@@ -15,6 +16,9 @@
     </Window.Background>
 
     <Window.Resources>
+
+        <vm:CollectionViewModel x:Key="ColeccionVM"/>
+
         <Style TargetType="{x:Type DataGrid}">
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="FontSize" Value="12"/>
