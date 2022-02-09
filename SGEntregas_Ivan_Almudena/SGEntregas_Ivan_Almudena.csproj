@@ -73,7 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MenuPC.xaml.cs">
+    <Compile Include="Ventanas\Escritorio\MenuPC.xaml.cs">
       <DependentUpon>MenuPC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ClientesCollection.cs" />
@@ -85,6 +85,9 @@
     </Compile>
     <Compile Include="Ventanas\Escritorio\DetallesPedido.xaml.cs">
       <DependentUpon>DetallesPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\GestionClientesPC.xaml.cs">
+      <DependentUpon>GestionClientesPC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Escritorio\PedidosCliente.xaml.cs">
       <DependentUpon>PedidosCliente.xaml</DependentUpon>
@@ -119,6 +122,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ventanas\Escritorio\GestionClientesPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\Escritorio\PedidosCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,7 +134,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuPC.xaml">
+    <Page Include="Ventanas\Escritorio\MenuPC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

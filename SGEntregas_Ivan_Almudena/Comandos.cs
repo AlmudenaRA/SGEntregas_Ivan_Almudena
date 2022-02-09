@@ -19,5 +19,49 @@ namespace SGEntregas_Ivan_Almudena
                 new KeyGesture(Key.Escape)
             }
         );
+
+        public static readonly RoutedUICommand Anadir = new RoutedUICommand
+        (
+            "Acción cuando se añade un cliente",
+            "Añadir",
+            typeof(Comandos),
+            new InputGestureCollection()
+            {
+                new KeyGesture(Key.A, ModifierKeys.Control)
+            }
+        );
+
+        public static readonly RoutedUICommand Modificar = new RoutedUICommand
+        (
+            "Acción cuando se modifica un cliente",
+            "Modificar",
+            typeof(Comandos),
+            new InputGestureCollection()
+            {
+                new KeyGesture(Key.M, ModifierKeys.Control)
+            }
+        );
+
+        public static readonly RoutedUICommand Eliminar = new RoutedUICommand
+        (
+            "Acción cuando se elimina un cliente",
+            "Eliminar",
+            typeof(Comandos),
+            new InputGestureCollection()
+            {
+                new KeyGesture(Key.E, ModifierKeys.Control)
+            }
+        );
+
+        public static readonly RoutedUICommand GuardarBD = new RoutedUICommand
+        (
+            "Acción cuando se guarda en la bd",
+            "Guardar en la BD",
+            typeof(Comandos),
+            new InputGestureCollection()
+            {
+                new KeyGesture(Key.G, ModifierKeys.Control)
+            }
+        );
     }
 }

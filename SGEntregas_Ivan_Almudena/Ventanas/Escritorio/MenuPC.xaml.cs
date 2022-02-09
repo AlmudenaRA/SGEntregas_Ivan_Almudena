@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.Ventanas.Escritorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +27,14 @@ namespace SGEntregas_Ivan_Almudena
 
         private void btnGestCliente_Click(object sender, RoutedEventArgs e)
         {
-
+            GestionClientesPC gestCliPC = new GestionClientesPC();
+            gestCliPC.ShowDialog();
         }
 
         private void btnGestPedido_Click(object sender, RoutedEventArgs e)
         {
-
+            SeleccionarCliente frm = new SeleccionarCliente();
+            frm.ShowDialog();
         }
     }
 }
