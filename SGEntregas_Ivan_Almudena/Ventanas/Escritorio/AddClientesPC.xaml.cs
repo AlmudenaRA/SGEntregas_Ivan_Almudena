@@ -58,7 +58,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
                     localidad = txtLocalidadCliente.Text,
                     email = txtEmailCliente.Text,
                     domicilio = txtDomicilioCliente.Text,
-                    provincia = cbProvin.SelectedIndex
+                    provincia = cbProvin.SelectedIndex +1
                 };
 
                 //Lo guarda en la lista de la tabla medicos de la conexion 

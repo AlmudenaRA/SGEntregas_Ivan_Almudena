@@ -7,7 +7,8 @@
         xmlns:comand="clr-namespace:SGEntregas_Ivan_Almudena"
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
-        Title="GestionClientesPC" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="GestionClientesPC" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None">
     <Window.CommandBindings>
         <CommandBinding Command="comand:Comandos.Anadir" CanExecute="CompruebaAnadir" Executed="EjecutaAnadir"/>
         <CommandBinding Command="comand:Comandos.Modificar" CanExecute="CompruebaModificar" Executed="EjecutaModificar"/>
@@ -17,15 +18,20 @@
     <Window.Resources>
         <vm:CollectionViewModel x:Key="ColeccionVM"/>
         <Style x:Key="Brd" TargetType="Border">
-            <Setter Property="BorderBrush" Value="#FF46CC8D"/>
+            <Setter Property="BorderBrush" Value="#FF165135"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="CornerRadius" Value="10"/>
         </Style>
-        <Style x:Key="txt" TargetType="TextBlock">
+        <Style TargetType="TextBlock">
             <Setter Property="TextTrimming" Value="WordEllipsis"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="MaxHeight" Value="50"/>
             <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#FF46CC8D"/>
+            <Setter Property="BorderBrush" Value="#FF46CC8D"/>
         </Style>
     </Window.Resources>
     <Window.Background>
@@ -39,13 +45,23 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0.6*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
         <ListView x:Name="listaClien" ItemsSource="{Binding Source={StaticResource ColeccionVM}, Path=ListaClientes}" 
-                  HorizontalAlignment="Center">
+                  HorizontalContentAlignment="Center" Grid.RowSpan="2">
+            <ListView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF46CC8D"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ListView.Background>
             <ListView.ItemTemplate>
                 <DataTemplate >
-                    <Border Style="{StaticResource Brd}" >
+                    <Border Style="{StaticResource Brd}">
                         <StackPanel Margin="20">
-                            <Border Style="{StaticResource Brd}" Margin="0,0,0,5" >
+                            <Border Margin="0,0,0,5" Style="{StaticResource Brd}" Padding="10" >
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                     <TextBlock Text="{Binding nombre}" Margin="0,0,10,0"/>
                                     <TextBlock Text="{Binding apellidos}"/>
@@ -63,14 +79,18 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Width="241">
-            <Button x:Name="bntAnadir" Content="Añadir" HorizontalAlignment="Center" VerticalAlignment="Top" 
+            <Button x:Name="bntAnadir" Content="Añadir" VerticalAlignment="Top" 
                     Command="comand:Comandos.Anadir" Width="100" Height="30"/>
-            <Button x:Name="bntModificar" Content="Modificar" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Center"
+            <Button x:Name="bntModificar" Content="Modificar" Margin="0,20,0,0" VerticalAlignment="Center"
                     Command="comand:Comandos.Modificar" Width="100" Height="30"/>
-            <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Center"
+            <Button x:Name="btnEliminar" Content="Eliminar" Margin="0,20,0,0" VerticalAlignment="Center"
                     Command="comand:Comandos.Eliminar" Width="100" Height="30" IsEnabled="False"/>
-            <Button x:Name="btnGuardarBD" Content="Guardar en la BD" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,0"
-                    Command="comand:Comandos.GuardarBD" Width="150" Height="30"/>
+            <Button x:Name="btnGuardarBD" Content="Guardar en la BD" VerticalAlignment="Bottom" Margin="0,20,0,0"
+                    Command="comand:Comandos.GuardarBD" Width="150" Height="30"/>            
         </StackPanel>
+        <Button x:Name="btnVolver" Grid.Column="1" Grid.Row="1" Height="60" Width="60" Margin="20"
+                HorizontalAlignment="Right" Click="btnVolver_Click" Background="Transparent">
+            <Image Source="/images/return.png" Stretch="Fill" />
+        </Button>
     </Grid>
 </Window>
