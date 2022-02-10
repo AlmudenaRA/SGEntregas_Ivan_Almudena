@@ -101,6 +101,9 @@
     <Compile Include="Ventanas\Escritorio\SeleccionarCliente.xaml.cs">
       <DependentUpon>SeleccionarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\UpdClientePC.xaml.cs">
+      <DependentUpon>UpdClientePC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CollectionViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Escritorio\MenuPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\UpdClientePC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

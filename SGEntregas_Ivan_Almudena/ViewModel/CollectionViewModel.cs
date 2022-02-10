@@ -61,12 +61,14 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
         private void cargarDatosClientes()
         {
             ListaClientes.Clear();
-            
-            var q = from p in objBD.clientes orderby p.apellidos ascending select p;
-            foreach (var p in q.ToList())
+
+            var qClient = from clie in objBD.clientes 
+                          orderby clie.apellidos, clie.nombre
+                          select clie;
+            foreach (var cliente in qClient.ToList())
             {
-                ListaClientes.Add(p);
-            }            
+                ListaClientes.Add(cliente);
+            }
         }
 
         public void CargarPedidosCliente(string dni)
