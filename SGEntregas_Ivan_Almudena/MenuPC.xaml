@@ -21,7 +21,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Bottom"/>
             <Setter Property="FontSize" Value="32"/>
-            <Setter Property="FontFamily" Value="Bodoni MT Black"/>
+            <Setter Property="FontFamily" Value="Bodoni MT Black"/>            
         </Style>
     </Window.Resources>
     <Window.Background>
@@ -38,19 +38,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
             <RowDefinition />
-            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.4*"/>            
         </Grid.RowDefinitions>
         <TextBlock Text="Clientes"/>
         <TextBlock Text="Pedidos" Grid.Column="1"/>
         <Button x:Name="btnGestCliente" Grid.Row="1" Click="btnGestCliente_Click" >
-            <Image Source="/images/clientes.png" Stretch="Fill"/>
+            <Image Source="images\clientes.png" Stretch="Fill"/>
         </Button>
         <Button x:Name="btnGestPedido" Grid.Column="1"  Grid.Row="1" Click="btnGestPedido_Click" >
-            <Image Source="/images/pedidos.png" Stretch="Fill" />
-        </Button>
+            <Image Source="images\pedidos.png" Stretch="Fill" />
+        </Button> 
         <Button x:Name="btnVolver" Grid.Column="1" Grid.Row="2" Height="60" Width="60" 
                 HorizontalAlignment="Right" Click="btnVolver_Click">
-            <Image Source="/images/return.png" Stretch="Fill" />
-        </Button>
+            <Image Source="images\return.png" Stretch="Fill" />
+        </Button>        
     </Grid>
 </Window>

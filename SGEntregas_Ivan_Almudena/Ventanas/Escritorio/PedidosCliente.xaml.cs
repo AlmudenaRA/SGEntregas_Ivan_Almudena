@@ -21,11 +21,12 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     public partial class PedidosCliente : Window
     {
         CollectionViewModel cvm;
-        public PedidosCliente(CollectionViewModel cvm, string nombre_apellidos)
+        public PedidosCliente(string nombre_apellidos, string dni)
         {
             InitializeComponent();
-            this.cvm = cvm;
+            cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
             txtNyA.Text = nombre_apellidos;
+            this.cvm.CargarPedidosCliente(dni);
         }
     }
 }

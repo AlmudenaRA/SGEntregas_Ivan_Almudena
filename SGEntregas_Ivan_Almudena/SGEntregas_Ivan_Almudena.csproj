@@ -101,6 +101,9 @@
     <Compile Include="Ventanas\Escritorio\SeleccionarCliente.xaml.cs">
       <DependentUpon>SeleccionarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\UpdClientePC.xaml.cs">
+      <DependentUpon>UpdClientePC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CollectionViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Escritorio\MenuPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\UpdClientePC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,11 +201,12 @@
       <DependentUpon>EntregasModel.edmx</DependentUpon>
       <LastGenOutput>EntregasModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\tablet.png" />
+    <Resource Include="images\pc.png" />
+    <Resource Include="images\return.png" />
     <Resource Include="images\pedidos.png" />
     <Resource Include="images\clientes.png" />
     <Resource Include="images\exit.jpeg" />
-    <Resource Include="images\pc.jpeg" />
-    <Resource Include="images\tablet.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
