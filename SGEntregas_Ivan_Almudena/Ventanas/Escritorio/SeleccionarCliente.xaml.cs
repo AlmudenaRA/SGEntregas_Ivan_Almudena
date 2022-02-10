@@ -44,6 +44,11 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             
         }
 
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
         {
             if (cmbUsuarios.SelectedIndex != -1)
