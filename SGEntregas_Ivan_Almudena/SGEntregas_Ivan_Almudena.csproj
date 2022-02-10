@@ -79,6 +79,9 @@
     <Compile Include="Ventanas\Escritorio\AddClientesPC.xaml.cs">
       <DependentUpon>AddClientesPC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\AddPedido.xaml.cs">
+      <DependentUpon>AddPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Escritorio\MenuPC.xaml.cs">
       <DependentUpon>MenuPC.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Ventanas\Escritorio\AddClientesPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\AddPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

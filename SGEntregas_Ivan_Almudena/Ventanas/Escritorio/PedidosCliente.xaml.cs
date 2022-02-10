@@ -36,6 +36,18 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             this.cvm = cvm;
             this.cliente = cli;
             this.DataContext = cliente;
+            this.cvm.CargarPedidosCliente(this.cliente.dni);
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddPedido frm = new AddPedido();
+            frm.ShowDialog();
         }
     }
 }
