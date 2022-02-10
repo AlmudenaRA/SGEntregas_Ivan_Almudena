@@ -83,8 +83,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             clienteDestino.email = clienteOrigen.email;
             clienteDestino.domicilio = clienteOrigen.domicilio;
             clienteDestino.localidad = clienteOrigen.localidad;
-            clienteDestino.provincia = clienteOrigen.provincia;
-            //clienteDestino.provincias = clienteOrigen.provincias;
+            clienteDestino.provincia = clienteOrigen.provincia;            
 
         }
     }
