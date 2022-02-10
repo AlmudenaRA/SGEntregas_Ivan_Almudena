@@ -49,5 +49,11 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             AddPedido frm = new AddPedido();
             frm.ShowDialog();
         }
+
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            ModificarPedido frm = new ModificarPedido();
+            frm.ShowDialog();
+        }
     }
 }

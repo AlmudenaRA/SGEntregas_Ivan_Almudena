@@ -98,6 +98,9 @@
     <Compile Include="Ventanas\Escritorio\GestionClientesPC.xaml.cs">
       <DependentUpon>GestionClientesPC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\ModificarPedido.xaml.cs">
+      <DependentUpon>ModificarPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Escritorio\PedidosCliente.xaml.cs">
       <DependentUpon>PedidosCliente.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Escritorio\GestionClientesPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\ModificarPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

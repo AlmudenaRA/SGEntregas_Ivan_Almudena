@@ -76,7 +76,7 @@
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0"
                     Click="btnAdd_Click"/>
             <Button x:Name="btnModificar" Content="Modficar"
-                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"/>
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnModificar_Click"/>
             <Button x:Name="btnElimnar" Content="Eliminar"
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0"/>
             <Button x:Name="btnGuardar" Content="Guardar BD"

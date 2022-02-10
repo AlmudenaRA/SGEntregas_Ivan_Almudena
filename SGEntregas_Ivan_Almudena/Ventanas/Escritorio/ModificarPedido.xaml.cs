@@ -15,23 +15,23 @@ using System.Windows.Shapes;
 namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 {
     /// <summary>
-    /// Lógica de interacción para AddPedido.xaml
+    /// Lógica de interacción para ModificarPedido.xaml
     /// </summary>
-    public partial class AddPedido : Window
+    public partial class ModificarPedido : Window
     {
-        public AddPedido()
+        public ModificarPedido()
         {
             InitializeComponent();
-        }
-
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void btnBorrar_Click(object sender, RoutedEventArgs e)
