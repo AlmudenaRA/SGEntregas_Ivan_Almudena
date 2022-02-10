@@ -56,7 +56,8 @@
 
         <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Grid.ColumnSpan="4" Margin="10">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <TextBlock x:Name="txtNyA" Text="Nombre Apellidos" Margin="5"/>
+                <TextBlock x:Name="txtNombre" Text="{Binding nombre}" Margin="5"/>
+                <TextBlock x:Name="txtApell" Text="{Binding apellidos}" Margin="5"/>
             </StackPanel>
         </Border>
 
