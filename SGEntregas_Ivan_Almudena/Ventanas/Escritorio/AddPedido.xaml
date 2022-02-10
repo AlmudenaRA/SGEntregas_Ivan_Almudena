@@ -43,7 +43,8 @@
             <Border BorderBrush="#FF46CC8D" BorderThickness="2">
                 <InkCanvas Height="125" MinWidth="200"/>
             </Border>
-            <Button x:Name="btnBorrar" Content="Borrar"/>
+            <Button x:Name="btnBorrar" Content="Borrar"
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
