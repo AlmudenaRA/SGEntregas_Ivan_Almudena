@@ -22,7 +22,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     public partial class SeleccionarCliente : Window
     {
         CollectionViewModel cvm;
-        ArrayList id_clientes = new ArrayList();
+
         public SeleccionarCliente()
         {
             InitializeComponent();
@@ -38,17 +38,22 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
             foreach (var e in q.ToList())
             {
-                cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);
-                id_clientes.Add(e.dni);
+                cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);                
             }
             
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
         {
             if (cmbUsuarios.SelectedIndex != -1)
-            {                
-                PedidosCliente frm = new PedidosCliente(cvm, cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
+            {
+                PedidosCliente frm = new PedidosCliente(cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
+                //PedidosCliente frm = new PedidosCliente(cvm, cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
                 frm.ShowDialog();
             }
         }

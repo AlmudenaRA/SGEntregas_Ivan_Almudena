@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Escritorio"
         mc:Ignorable="d"
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
-        Title="Ventana_Pedidos_Cliente" Height="450" Width="800">
+        Title="Ventana_Pedidos_Cliente" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -61,7 +61,7 @@
             </StackPanel>
         </Border>
 
-        <DataGrid Grid.Row="1" Name="dgPacientes" Grid.Column="0" Grid.ColumnSpan="4" ColumnWidth="Auto" 
+        <DataGrid Grid.Row="1" Name="dgPedidos" Grid.Column="0" Grid.ColumnSpan="4" ColumnWidth="Auto" 
                   ItemsSource="{Binding Source={StaticResource ColeccionVM}, Path=ListaPedidos}">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="ID_Pedido" Binding="{Binding id_pedido}" Visibility="Collapsed"/>
@@ -72,10 +72,19 @@
         </DataGrid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center">
-            <Button x:Name="btnAdd" Content="Añadir"/>
-            <Button x:Name="btnModificar" Content="Modficar"/>
-            <Button x:Name="btnElimnar" Content="Eliminar"/>
-            <Button x:Name="btnGuardar" Content="Guardar BD"/>
+            <Button x:Name="btnAdd" Content="Añadir" 
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"
+                    Click="btnAdd_Click"/>
+            <Button x:Name="btnModificar" Content="Modficar"
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnModificar_Click"/>
+            <Button x:Name="btnElimnar" Content="Eliminar"
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnElimnar_Click"/>
+            <Button x:Name="btnGuardar" Content="Guardar BD"
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnGuardar_Click"/>
+            <Button x:Name="btnVolver" Height="50" Width="50" Background="Transparent" BorderThickness="0"
+                HorizontalAlignment="Right" Click="btnVolver_Click">
+                <Image Source="/images/return.png" Stretch="Fill" />
+            </Button>
         </StackPanel>
 
     </Grid>
