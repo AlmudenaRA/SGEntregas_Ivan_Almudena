@@ -22,7 +22,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     public partial class SeleccionarCliente : Window
     {
         CollectionViewModel cvm;
-        ArrayList id_clientes = new ArrayList();
+
         public SeleccionarCliente()
         {
             InitializeComponent();
@@ -38,8 +38,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
             foreach (var e in q.ToList())
             {
-                cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);
-                id_clientes.Add(e.dni);
+                cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);                
             }
             
         }
