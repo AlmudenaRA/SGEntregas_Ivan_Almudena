@@ -59,9 +59,14 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
                     email = txtEmailCliente.Text,
                     domicilio = txtDomicilioCliente.Text,
                     provincia = cbProvin.SelectedIndex +1
+                    
                 };
 
-                //Lo guarda en la lista de la tabla medicos de la conexion 
+                objCliente.provincia = cbProvin.SelectedIndex + 1;
+                var provin = cvm.objBD.provincias.Find(cbProvin.SelectedIndex + 1);
+                objCliente.provincias = provin;
+
+                //Lo guarda en la lista de la tabla clientes de la conexion 
                 cvm.objBD.clientes.Add(objCliente);
                 //Lo guarda en la lista observable que tienen el binding
                 cvm.ListaClientes.Add(objCliente);

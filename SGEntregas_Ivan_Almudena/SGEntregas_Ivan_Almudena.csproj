@@ -69,6 +69,7 @@
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Comandos.cs" />
+    <Compile Include="Converters\IndexRestaConverter.cs" />
     <Compile Include="EntregasModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

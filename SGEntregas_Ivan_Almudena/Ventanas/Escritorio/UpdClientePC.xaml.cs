@@ -47,11 +47,11 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
                 && !Utils.comprobarVacios(txtDomicilioCliente.Text)
                 && !Utils.comprobarVacios(txtLocalidadCliente.Text)
                 && !Utils.comprobarVacios(txtEmailCliente.Text)
-                && !Utils.comprobarVacios(cbProvin.SelectedItem.ToString()))
+                && !Utils.comprobarVacios(cbProvin.Text))
             {
                 cli.provincia = cbProvin.SelectedIndex + 1;
                 var provin = cvm.objBD.provincias.Find(cbProvin.SelectedIndex + 1);
-                cli.provincias.nombre_provincia = provin.nombre_provincia;
+                cli.provincias = provin;           
 
                 actualizarProperties(copiaCli, cli);
 
@@ -73,6 +73,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             {
                 cbProvin.Items.Add(provincia.ToString());
             }
+            
         }
 
         private void actualizarProperties(clientes clienteOrigen, clientes clienteDestino)
@@ -83,7 +84,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             clienteDestino.email = clienteOrigen.email;
             clienteDestino.domicilio = clienteOrigen.domicilio;
             clienteDestino.localidad = clienteOrigen.localidad;
-            clienteDestino.provincia = clienteOrigen.provincia;            
+            clienteDestino.provincia = clienteOrigen.provincia;         
 
         }
     }
