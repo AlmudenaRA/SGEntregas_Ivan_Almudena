@@ -14,7 +14,7 @@ namespace SGEntregas_Ivan_Almudena
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    public partial class clientes : INotifyPropertyChanged
+    public partial class clientes : INotifyPropertyChanged, ICloneable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public clientes()
@@ -141,6 +141,11 @@ namespace SGEntregas_Ivan_Almudena
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

@@ -32,21 +32,25 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void CargarComboClientes()
         {
-            using (entregasEntities objBD = new entregasEntities())
-            {
-                var q = from e in objBD.clientes
-                        select e;
+            var q = from e in cvm.objBD.clientes
+                    orderby e.apellidos, e.nombre
+                    select e;
 
-                foreach (var e in q.ToList())
-                {
-                    cmbUsuarios.Items.Add(e.nombre + " " + e.apellidos);
-                    id_clientes.Add(e.dni);
-                }
+            foreach (var e in q.ToList())
+            {
+                cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);
+                id_clientes.Add(e.dni);
             }
+            
         }
 
-        private void cmbUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
         {
+            if (cmbUsuarios.SelectedIndex != -1)
+            {                
+                PedidosCliente frm = new PedidosCliente(cvm, cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
+                frm.ShowDialog();
+            }
         }
     }
 }
