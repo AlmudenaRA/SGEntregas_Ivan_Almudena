@@ -18,9 +18,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/><!-- Fecha pedido -->
-            <RowDefinition Height="*"/><!-- Fecha entrega -->
+            <!--<RowDefinition Height="*"/>--><!-- Fecha entrega -->
             <RowDefinition Height="2*"/><!-- Descripcion -->
-            <RowDefinition Height="3*"/><!-- InkCanvas -->
+            <!--<RowDefinition Height="3*"/>--><!-- InkCanvas -->
             <RowDefinition Height="*"/><!-- Botones -->
         </Grid.RowDefinitions>
 
@@ -29,23 +29,23 @@
             <DatePicker Name="dtpFechaPedido" Margin="10,0,0,0" MinWidth="200"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!--<StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Fecha de entrega:"/>
             <DatePicker Name="dtpFechaEntrega" Margin="10,0,0,0" MinWidth="200"/>
-        </StackPanel>
+        </StackPanel>-->
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Fecha del pedido:"/>
-            <RichTextBox Name="txtDescripcion" Margin="10,0,0,0" MinWidth="200" Height="100"/>
+            <RichTextBox Name="txtDescripcion" Margin="10,0,0,0" MinWidth="200" Height="200"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!--<StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border BorderBrush="#FF46CC8D" BorderThickness="2">
                 <InkCanvas Name="firmaCanvas" Height="125" MinWidth="200"/>
             </Border>
             <Button x:Name="btnBorrar" Content="Borrar"
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnBorrar_Click"/>
-        </StackPanel>
+        </StackPanel>-->
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnAceptar" Content="Aceptar" Margin="10" Height="25" MinWidth="70"

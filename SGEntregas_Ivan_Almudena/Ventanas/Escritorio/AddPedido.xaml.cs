@@ -38,12 +38,24 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            
+            TextRange desc = new TextRange(txtDescripcion.Document.ContentStart, txtDescripcion.Document.ContentEnd);
+            pedidos newPedido = (new pedidos()
+            {
+                cliente = this.cliente.dni,
+                fecha_pedido = (DateTime)dtpFechaPedido.SelectedDate,
+                descripcion =   desc.Text
+            }); 
+
+            cvm.objBD.pedidos.Add(newPedido);
+            cvm.ListaPedidos.Add(newPedido);
+
+            System.Windows.MessageBox.Show("Insertado correctamente", "EXITO");
+            this.Close();
         }
 
-        private void btnBorrar_Click(object sender, RoutedEventArgs e)
-        {
-            firmaCanvas.Strokes.Clear();
-        }
+        //private void btnBorrar_Click(object sender, RoutedEventArgs e)
+        //{
+        //    firmaCanvas.Strokes.Clear();
+        //}
     }
 }
