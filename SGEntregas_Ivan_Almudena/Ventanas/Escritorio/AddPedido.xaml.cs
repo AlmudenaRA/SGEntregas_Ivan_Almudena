@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,15 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     /// </summary>
     public partial class AddPedido : Window
     {
-        public AddPedido()
+        CollectionViewModel cvm;
+        clientes cliente;
+        public AddPedido(CollectionViewModel cvm, clientes cliente)
         {
             InitializeComponent();
+            this.cvm = cvm;
+            this.cliente = cliente;
+            dtpFechaPedido.SelectedDate = DateTime.Now.Date;
+            dtpFechaPedido.DisplayDate = DateTime.Now.Date;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -31,7 +38,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnBorrar_Click(object sender, RoutedEventArgs e)

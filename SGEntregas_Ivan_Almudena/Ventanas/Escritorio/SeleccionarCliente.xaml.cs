@@ -52,8 +52,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
         {
             if (cmbUsuarios.SelectedIndex != -1)
-            {                
-                PedidosCliente frm = new PedidosCliente(cvm, cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
+            {
+                PedidosCliente frm = new PedidosCliente(cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
+                //PedidosCliente frm = new PedidosCliente(cvm, cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
                 frm.ShowDialog();
             }
         }

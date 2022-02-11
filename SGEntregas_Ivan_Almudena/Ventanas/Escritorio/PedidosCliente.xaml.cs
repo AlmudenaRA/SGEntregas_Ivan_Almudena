@@ -1,6 +1,7 @@
 ﻿using SGEntregas_Ivan_Almudena.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,22 +24,24 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     {
         CollectionViewModel cvm;
         clientes cliente;
-        //public PedidosCliente(string nombre_apellidos, string dni)
-        //{
-        //    InitializeComponent();
-        //    cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
-        //    txtNyA.Text = nombre_apellidos;
-        //    this.cvm.CargarPedidosCliente(dni);
-        //}
-
-        public PedidosCliente(CollectionViewModel cvm, clientes cli)
+        pedidos pedido;
+        public PedidosCliente(clientes cli)
         {
             InitializeComponent();
-            this.cvm = cvm;
+            cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
             this.cliente = cli;
             this.DataContext = cliente;
-            this.cvm.CargarPedidosCliente(this.cliente.dni);
+            this.cvm.CargarPedidosCliente(cliente.dni);
         }
+
+        //public PedidosCliente(CollectionViewModel cvm, clientes cli)
+        //{
+        //    InitializeComponent();
+        //    this.cvm = cvm;
+        //    this.cliente = cli;
+        //    this.DataContext = cliente;
+        //    this.cvm.CargarPedidosCliente(this.cliente.dni);
+        //}
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +50,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddPedido frm = new AddPedido();
+            AddPedido frm = new AddPedido(cvm, cliente);
             frm.ShowDialog();
         }
 
@@ -54,6 +58,35 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         {
             ModificarPedido frm = new ModificarPedido();
             frm.ShowDialog();
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult dr = (DialogResult)System.Windows.MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButton.YesNo);
+
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                cvm.GuardarDatos();
+                System.Windows.MessageBox.Show("Cabios guardados");
+            }
+        }
+
+        private void btnElimnar_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgPedidos.SelectedIndex != -1)
+            {
+
+                DialogResult dr = (DialogResult)System.Windows.MessageBox.Show("Estas seguro que desea eliminar el pedido", "Eliminar", MessageBoxButton.YesNo);
+
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    int id_pedido = cvm.ListaPedidos[dgPedidos.SelectedIndex].id_pedido;
+                    pedido = cvm.objBD.pedidos.Find(id_pedido);
+                    cvm.eliminarPedido(pedido);
+                    cvm.ListaPedidos.RemoveAt(dgPedidos.SelectedIndex);
+                    System.Windows.MessageBox.Show("Pedido eliminado");
+                }
+            }
         }
     }
 }

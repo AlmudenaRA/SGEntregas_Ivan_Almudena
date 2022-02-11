@@ -121,5 +121,10 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             this.Close();
 
         }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

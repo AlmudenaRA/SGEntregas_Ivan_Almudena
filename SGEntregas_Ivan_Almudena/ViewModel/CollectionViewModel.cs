@@ -38,6 +38,17 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             }
         }
 
+        internal void CargarDatosUnicoCliente(string dni)
+        {
+            ListaClientes.Clear();
+
+            var q = from p in objBD.clientes where p.dni.Equals(dni) select p;
+            foreach (var p in q.ToList())
+            {
+                ListaClientes.Add(p);
+            }
+        }
+
         private ClientesCollection _listaClientes = new ClientesCollection();
         public ClientesCollection ListaClientes
         {
@@ -71,6 +82,11 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             }
         }
 
+        internal void GuardarDatos()
+        {
+            objBD.SaveChanges();
+        }
+
         public void CargarPedidosCliente(string dni)
         {
             ListaPedidos.Clear();
@@ -79,6 +95,11 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             {
                 ListaPedidos.Add(p);
             }
+        }
+
+        internal void eliminarPedido(pedidos pedido)
+        {
+            objBD.pedidos.Remove(pedido);
         }
 
         public void guardarDatos()

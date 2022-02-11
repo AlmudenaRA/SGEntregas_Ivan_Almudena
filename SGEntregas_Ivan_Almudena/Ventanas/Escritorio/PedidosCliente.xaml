@@ -61,7 +61,7 @@
             </StackPanel>
         </Border>
 
-        <DataGrid Grid.Row="1" Name="dgPacientes" Grid.Column="0" Grid.ColumnSpan="4" ColumnWidth="Auto" 
+        <DataGrid Grid.Row="1" Name="dgPedidos" Grid.Column="0" Grid.ColumnSpan="4" ColumnWidth="Auto" 
                   ItemsSource="{Binding Source={StaticResource ColeccionVM}, Path=ListaPedidos}">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="ID_Pedido" Binding="{Binding id_pedido}" Visibility="Collapsed"/>
@@ -78,9 +78,9 @@
             <Button x:Name="btnModificar" Content="Modficar"
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnModificar_Click"/>
             <Button x:Name="btnElimnar" Content="Eliminar"
-                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"/>
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnElimnar_Click"/>
             <Button x:Name="btnGuardar" Content="Guardar BD"
-                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"/>
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnGuardar_Click"/>
             <Button x:Name="btnVolver" Height="50" Width="50" Background="Transparent" BorderThickness="0"
                 HorizontalAlignment="Right" Click="btnVolver_Click">
                 <Image Source="/images/return.png" Stretch="Fill" />
