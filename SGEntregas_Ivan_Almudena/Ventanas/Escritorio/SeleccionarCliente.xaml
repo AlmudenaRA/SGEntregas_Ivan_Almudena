@@ -7,11 +7,22 @@
         mc:Ignorable="d"
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
             Title="SeleccionarUsuario" Height="150" Width="400" WindowStartupLocation="CenterScreen">
+    
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF46CC8D"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
     <Window.Resources>
         <vm:CollectionViewModel x:Key="ColeccionVM"/>
     </Window.Resources>
+    
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="Auto" VerticalAlignment="Center">
         <TextBlock Text="Usuarios" HorizontalAlignment="Center"/>
-        <ComboBox Name="cmbUsuarios" MinWidth="220" Margin="10" SelectionChanged="cmbUsuarios_SelectionChanged"/>
+        <ComboBox Name="cmbUsuarios" MinWidth="220" Margin="10" />
+        <Button x:Name="btnVerPedidos" Width="120" Content="Mostrar pedidos" Margin="0,20,0,0" 
+                Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnVerPedidos_Click"/>
     </StackPanel>
 </Window>

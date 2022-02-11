@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,22 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     /// </summary>
     public partial class PedidosCliente : Window
     {
-        public PedidosCliente()
+        CollectionViewModel cvm;
+        clientes cliente;
+        //public PedidosCliente(string nombre_apellidos, string dni)
+        //{
+        //    InitializeComponent();
+        //    cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
+        //    txtNyA.Text = nombre_apellidos;
+        //    this.cvm.CargarPedidosCliente(dni);
+        //}
+
+        public PedidosCliente(CollectionViewModel cvm, clientes cli)
         {
             InitializeComponent();
+            this.cvm = cvm;
+            this.cliente = cli;
+            this.DataContext = cliente;
         }
     }
 }

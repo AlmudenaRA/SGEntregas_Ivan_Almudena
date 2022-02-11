@@ -28,13 +28,18 @@ namespace SGEntregas_Ivan_Almudena
         private void btnGestCliente_Click(object sender, RoutedEventArgs e)
         {
             GestionClientesPC gestCliPC = new GestionClientesPC();
-            gestCliPC.ShowDialog();
+            gestCliPC.ShowDialog();            
         }
 
         private void btnGestPedido_Click(object sender, RoutedEventArgs e)
         {
             SeleccionarCliente frm = new SeleccionarCliente();
             frm.ShowDialog();
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
