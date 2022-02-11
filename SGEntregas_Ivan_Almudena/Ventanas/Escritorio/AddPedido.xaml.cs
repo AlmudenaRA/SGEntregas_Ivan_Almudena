@@ -43,7 +43,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             {
                 cliente = this.cliente.dni,
                 fecha_pedido = (DateTime)dtpFechaPedido.SelectedDate,
-                descripcion =   desc.Text
+                descripcion =  desc.Text
             }); 
 
             cvm.objBD.pedidos.Add(newPedido);
