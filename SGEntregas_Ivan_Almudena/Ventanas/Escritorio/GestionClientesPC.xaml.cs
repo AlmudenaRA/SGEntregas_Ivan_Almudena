@@ -39,7 +39,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             AddClientesPC addClien = new AddClientesPC(cvm);
             addClien.ShowDialog();
             
-            listaClien.Items.Refresh();
+            //listaClien.Items.Refresh();
         }
 
         private void CompruebaModificar(object sender, CanExecuteRoutedEventArgs e)
