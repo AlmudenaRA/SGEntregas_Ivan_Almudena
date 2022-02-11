@@ -28,11 +28,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         {
             InitializeComponent();
             this.cli = cli;
-            MessageBox.Show(cli.provincias.nombre_provincia);
             this.cvm = cvm;
             cargarProvincias();            
             copiaCli = (clientes)cli.Clone();
-            //MessageBox.Show(copiaCli.provincias.nombre_provincia);
             this.DataContext = copiaCli;
             
         }
@@ -53,8 +51,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             {
                 cli.provincia = cbProvin.SelectedIndex + 1;
                 var provin = cvm.objBD.provincias.Find(cbProvin.SelectedIndex + 1);
-                cli.provincias = provin;
-           
+                cli.provincias = provin;           
 
                 actualizarProperties(copiaCli, cli);
 
@@ -87,7 +84,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             clienteDestino.email = clienteOrigen.email;
             clienteDestino.domicilio = clienteOrigen.domicilio;
             clienteDestino.localidad = clienteOrigen.localidad;
-            clienteDestino.provincia = clienteOrigen.provincia;            
+            clienteDestino.provincia = clienteOrigen.provincia;         
 
         }
     }
