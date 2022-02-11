@@ -65,7 +65,7 @@
         <TextBox x:Name="txtDomicilioCliente" Grid.Column="1" Grid.Row="5" Text="{Binding domicilio}"/>
         <TextBox x:Name="txtLocalidadCliente" Grid.Column="1" Grid.Row="6" Text="{Binding localidad}"/>
         <ComboBox x:Name="cbProvin" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Center" 
-                  Width="300" Height="30" Text="{Binding provincias.nombre_provincia}"/>
+                  Width="300" Height="30" SelectedIndex="{Binding provincia}"/>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="8" HorizontalAlignment="Center">
             <Button x:Name="btnUpd" Content="Modificar cliente" VerticalAlignment="Center" Click="btnUpd_Click" />
             <Button x:Name="btnCancel" Content="Cancelar" VerticalAlignment="Center" Margin="30,0,0,0" Click="btnCancel_Click"/>
