@@ -35,8 +35,8 @@
         </StackPanel>-->
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Fecha del pedido:"/>
-            <RichTextBox Name="txtDescripcion" Margin="10,0,0,0" MinWidth="200" Height="200"/>
+            <TextBlock Text="Descripción:"/>
+            <RichTextBox Name="txtDescripcion" Margin="10,0,0,0" MinWidth="200" Height="200" Width="221"/>
         </StackPanel>
 
         <!--<StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -48,12 +48,12 @@
         </StackPanel>-->
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnAceptar" Content="Aceptar" Margin="10" Height="25" MinWidth="70"
+            <Button x:Name="btnAceptar" Content="Aceptar" Margin="10,10,20,10" Height="30" MinWidth="70"
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0"
-                    Click="btnAceptar_Click"/>
-            <Button x:Name="btnCancelar" Content="Cancelar" Margin="10" Height="25" MinWidth="70" 
+                    Click="btnAceptar_Click" Width="90"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Margin="20,10,10,10" Height="30" MinWidth="70" 
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0"
-                    Click="btnCancelar_Click"/>
+                    Click="btnCancelar_Click" Width="90"/>
         </StackPanel>
 
     </Grid>
