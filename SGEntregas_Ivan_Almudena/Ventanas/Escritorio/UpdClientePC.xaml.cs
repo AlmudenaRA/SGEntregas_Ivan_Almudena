@@ -29,8 +29,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             InitializeComponent();
             this.cli = cli;
             this.cvm = cvm;
-            cargarProvincias();            
-            copiaCli = (clientes)cli.Clone();
+            cargarProvincias();
+            //copiaCli = (clientes)cli.Clone();
+            copiaCli = clientes.ShallowCopyEntity(cli);
             this.DataContext = copiaCli;
             
         }
@@ -51,7 +52,8 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             {
                 cli.provincia = cbProvin.SelectedIndex + 1;
                 var provin = cvm.objBD.provincias.Find(cbProvin.SelectedIndex + 1);
-                cli.provincias = provin;           
+                cli.provincias = provin;
+                
 
                 actualizarProperties(copiaCli, cli);
 
