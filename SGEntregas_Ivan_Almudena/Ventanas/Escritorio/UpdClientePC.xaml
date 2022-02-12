@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Escritorio"
+        xmlns:converte="clr-namespace:SGEntregas_Ivan_Almudena.Converters"
         mc:Ignorable="d"
         Title="UpdClientePC" Height="550" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
@@ -27,6 +28,7 @@
             <Setter Property="Background" Value="#FF46CC8D"/>
             <Setter Property="BorderBrush" Value="#FF46CC8D"/>
         </Style>
+        <converte:IndexRestaConverter x:Key="conversorIDProvi"/>
     </Window.Resources>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -65,7 +67,7 @@
         <TextBox x:Name="txtDomicilioCliente" Grid.Column="1" Grid.Row="5" Text="{Binding domicilio}"/>
         <TextBox x:Name="txtLocalidadCliente" Grid.Column="1" Grid.Row="6" Text="{Binding localidad}"/>
         <ComboBox x:Name="cbProvin" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Center" 
-                  Width="300" Height="30" Text="{Binding provincias.nombre_provincia}"/>
+                  Width="300" Height="30" SelectedIndex="{Binding provincia, Converter={StaticResource conversorIDProvi}}"/>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="8" HorizontalAlignment="Center">
             <Button x:Name="btnUpd" Content="Modificar cliente" VerticalAlignment="Center" Click="btnUpd_Click" />
             <Button x:Name="btnCancel" Content="Cancelar" VerticalAlignment="Center" Margin="30,0,0,0" Click="btnCancel_Click"/>

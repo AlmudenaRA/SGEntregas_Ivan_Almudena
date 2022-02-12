@@ -12,9 +12,10 @@ namespace SGEntregas_Ivan_Almudena
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Linq;
     using System.Runtime.CompilerServices;
 
-    public partial class clientes : INotifyPropertyChanged, ICloneable
+    public partial class clientes : INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public clientes()
@@ -143,9 +144,24 @@ namespace SGEntregas_Ivan_Almudena
             }
         }
 
-        public object Clone()
+        public static TEntity ShallowCopyEntity<TEntity>(TEntity source) where TEntity : class, new()
         {
-            return this.MemberwiseClone();
+
+            // Get properties from EF that are read/write and not marked witht he NotMappedAttribute
+            var sourceProperties = typeof(TEntity)
+                                    .GetProperties()
+                                    .Where(p => p.CanRead && p.CanWrite &&
+                                                p.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute), true).Length == 0);
+            var newObj = new TEntity();
+
+            foreach (var property in sourceProperties)
+            {
+                // Copy value
+                property.SetValue(newObj, property.GetValue(source, null), null);
+            }
+
+            return newObj;
+
         }
     }
 }

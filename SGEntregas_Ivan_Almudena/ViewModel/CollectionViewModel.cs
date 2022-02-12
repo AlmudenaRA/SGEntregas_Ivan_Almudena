@@ -11,7 +11,6 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
 {
     public class CollectionViewModel : INotifyPropertyChanged
     {
-
         public CollectionViewModel()
         {
            cargarDatosClientes();
