@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,36 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     /// </summary>
     public partial class ModificarPedido : Window
     {
-        public ModificarPedido()
+        CollectionViewModel cvm;
+        pedidos pedido;
+        pedidos copiaPedido;
+
+        public ModificarPedido(CollectionViewModel cvm, pedidos ped)
         {
             InitializeComponent();
+            this.cvm = cvm;
+            this.pedido = ped;
+            copiaPedido = pedidos.ShallowCopyEntity(pedido);
+            this.DataContext = copiaPedido;
+            
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
+            if (!Utils.comprobarVacios(txtDescripcion.Text) && !Utils.comprobarVacios(dtpFechaPedido.SelectedDate.ToString()))
+            {
+                actualizarProperties(copiaPedido, pedido);
+
+                MessageBox.Show("Modificado correctamente");
+                this.Close();
+            }
+        }
+
+        private void actualizarProperties(pedidos pedidoOrigen, pedidos pedidoDestino)
+        {
+            pedidoDestino.fecha_pedido = pedidoOrigen.fecha_pedido;
+            pedidoDestino.descripcion = pedidoOrigen.descripcion;            
+
 
         }
 
@@ -34,9 +58,6 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             this.Close();
         }
 
-        private void btnBorrar_Click(object sender, RoutedEventArgs e)
-        {
-            firmaCanvas.Strokes.Clear();
-        }
+        
     }
 }
