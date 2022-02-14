@@ -21,11 +21,11 @@
             <Setter Property="MaxHeight" Value="50"/>
             <Setter Property="Margin" Value="5"/>
         </Style>
-        <!--<Style TargetType="Button">
+        <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Background" Value="#FF46CC8D"/>
             <Setter Property="BorderBrush" Value="#FF46CC8D"/>
-        </Style>-->
+        </Style>
     </Window.Resources>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -63,7 +63,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="btnMostrar" Content="Mostrar entregas" Grid.Row="1" Height="50" Width="150" Margin="20"
-                HorizontalAlignment="Center" Background="#FF46CC8D" BorderBrush="#FF46CC8D" Click="btnMostrar_Click"/>
+               Click="btnMostrar_Click"/>
         <Button x:Name="btnVolver" Grid.Row="1" Height="50" Width="50" Margin="20" BorderThickness="0"
                 HorizontalAlignment="Right" Background="Transparent" Click="btnVolver_Click">
             <Image Source="/images/return.png" Stretch="Fill" />
