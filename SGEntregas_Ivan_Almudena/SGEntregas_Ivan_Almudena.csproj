@@ -111,6 +111,9 @@
     <Compile Include="Ventanas\Escritorio\UpdClientePC.xaml.cs">
       <DependentUpon>UpdClientePC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Tablet\TarjetaPedido.xaml.cs">
+      <DependentUpon>TarjetaPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CollectionViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Escritorio\UpdClientePC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\TarjetaPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
