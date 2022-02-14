@@ -38,12 +38,32 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
+            string desc = new TextRange(txtDescripcion.Document.ContentStart, txtDescripcion.Document.ContentEnd).Text;
+            if (!String.IsNullOrWhiteSpace(desc) && !Utils.comprobarVacios(dtpFechaPedido.SelectedDate.ToString()))
+            {                
+                pedidos newPedido = (new pedidos()
+                {
+                    cliente = this.cliente.dni,
+                    fecha_pedido = (DateTime)dtpFechaPedido.SelectedDate,
+                    descripcion = desc
+                });
+
+                cvm.objBD.pedidos.Add(newPedido);
+                cvm.ListaPedidos.Add(newPedido);
+
+                System.Windows.MessageBox.Show("Insertado correctamente", "EXITO");
+                this.Close();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Debe rellenar los campos");
+            }
             
         }
 
-        private void btnBorrar_Click(object sender, RoutedEventArgs e)
-        {
-            firmaCanvas.Strokes.Clear();
-        }
+        //private void btnBorrar_Click(object sender, RoutedEventArgs e)
+        //{
+        //    firmaCanvas.Strokes.Clear();
+        //}
     }
 }

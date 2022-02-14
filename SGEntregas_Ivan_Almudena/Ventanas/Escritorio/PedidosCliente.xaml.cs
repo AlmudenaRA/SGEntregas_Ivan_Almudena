@@ -56,8 +56,18 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            ModificarPedido frm = new ModificarPedido();
-            frm.ShowDialog();
+            if(dgPedidos.SelectedIndex != -1)
+            {
+                int pos = dgPedidos.SelectedIndex;
+                ModificarPedido frm = new ModificarPedido(cvm, cvm.ListaPedidos[pos]);
+                frm.ShowDialog();
+                dgPedidos.Items.Refresh();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Seleccione un pedido");
+            }
+            
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -67,7 +77,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 cvm.GuardarDatos();
-                System.Windows.MessageBox.Show("Cabios guardados");
+                System.Windows.MessageBox.Show("Cambios guardados");
             }
         }
 
