@@ -1,4 +1,5 @@
 ﻿using SGEntregas_Ivan_Almudena.Ventanas.Escritorio;
+using SGEntregas_Ivan_Almudena.Ventanas.Tablet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace SGEntregas_Ivan_Almudena
 
         private void btnTablet_Click(object sender, RoutedEventArgs e)
         {
-
+            ClientesTablet clieTablet = new ClientesTablet();
+            clieTablet.ShowDialog();
         }
 
         private void btnPc_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,72 @@
+﻿<Window x:Class="SGEntregas_Ivan_Almudena.Ventanas.Tablet.ClientesTablet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Tablet"
+        xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
+        mc:Ignorable="d"
+        Title="ClientesTablet" Height="450" Width="700" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None">
+    <Window.Resources>
+        <vm:CollectionViewModel x:Key="ColeccionVM"/>
+        <Style x:Key="Brd" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#FF165135"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextTrimming" Value="WordEllipsis"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="MaxHeight" Value="50"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <!--<Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#FF46CC8D"/>
+            <Setter Property="BorderBrush" Value="#FF46CC8D"/>
+        </Style>-->
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF46CC8D" />
+            <GradientStop Color="White" Offset="1"/>
+            
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="listaClien" ItemsSource="{Binding Source={StaticResource ColeccionVM}, Path=ListaClientes}" 
+                 HorizontalContentAlignment="Stretch" Margin="50,20" Background="Transparent">            
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <Border Style="{StaticResource Brd}">
+                        <StackPanel Margin="20">
+                            <Border Margin="0,0,0,5" Style="{StaticResource Brd}" Padding="10" >
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding nombre}" Margin="0,0,10,0"/>
+                                    <TextBlock Text="{Binding apellidos}"/>
+                                </StackPanel>
+                            </Border>
+                            <TextBlock Text="{Binding domicilio}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding localidad}" Margin="0,0,10,0"/>
+                                <TextBlock Text="-" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding provincias.nombre_provincia}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnMostrar" Content="Mostrar entregas" Grid.Row="1" Height="50" Width="150" Margin="20"
+                HorizontalAlignment="Center" Background="#FF46CC8D" BorderBrush="#FF46CC8D" Click="btnMostrar_Click"/>
+        <Button x:Name="btnVolver" Grid.Row="1" Height="50" Width="50" Margin="20" BorderThickness="0"
+                HorizontalAlignment="Right" Background="Transparent" Click="btnVolver_Click">
+            <Image Source="/images/return.png" Stretch="Fill" />
+        </Button>
+    </Grid>
+</Window>
