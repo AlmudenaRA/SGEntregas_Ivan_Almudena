@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SGEntregas_Ivan_Almudena
@@ -10,11 +11,16 @@ namespace SGEntregas_Ivan_Almudena
     {
         public static bool comprobarVacios(string str)
         {
-            if (str.Equals(string.Empty.Trim()))
+            return str.Equals(string.Empty.Trim());           
+        }
+
+        public static bool validarFormatoDni(string dni)
+        {
+            if (dni == null)
             {
-                return true;
-            }
-            else return false;
+                return false;
+            } else
+                return Regex.IsMatch(dni.ToUpper(), "^[0-9]{8}-[A-Z]$");            
         }
     }
 }
