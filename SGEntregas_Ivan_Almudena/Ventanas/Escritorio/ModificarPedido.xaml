@@ -1,0 +1,46 @@
+﻿<Window x:Class="SGEntregas_Ivan_Almudena.Ventanas.Escritorio.ModificarPedido"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Escritorio"
+        mc:Ignorable="d"
+        Title="AddPedido" Height="450" Width="340"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF46CC8D"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>           
+            <RowDefinition Height="2*"/>          
+            <RowDefinition Height="*"/>            
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Fecha del pedido:"/>
+            <DatePicker Name="dtpFechaPedido" Margin="10,0,0,0" MinWidth="200" SelectedDate="{Binding fecha_pedido}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Descripción:"/>
+            <TextBox Name="txtDescripcion" Margin="10,0,0,0" MinWidth="200" Height="200" Width="221" MaxLines="15"
+                     TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  Text="{Binding descripcion}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnAceptar" Content="Aceptar" Margin="10,10,20,10" Height="30" MinWidth="70"
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"
+                     Width="90" Click="btnAceptar_Click"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Margin="20,10,10,10" Height="30" MinWidth="70" 
+                    Background="#FF46CC8D" Foreground="White" BorderThickness="0"
+                    Click="btnCancelar_Click" Width="90"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
