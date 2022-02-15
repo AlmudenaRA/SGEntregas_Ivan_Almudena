@@ -56,11 +56,11 @@
         <TextBlock Text="DNI: " Grid.Row="1"/>
         <TextBlock Text="Nombre: " Grid.Row="2"/>
         <TextBlock Text="Apellidos: " Grid.Row="3"/>
-        <TextBlock Text="Email: " Grid.Row="4"/>
+        <TextBlock Text="Email: (Opcional) " Grid.Row="4"/>
         <TextBlock Text="Domicilio: " Grid.Row="5"/>
         <TextBlock Text="Localidad: " Grid.Row="6"/>
         <TextBlock Text="Provincia: " Grid.Row="7"/>
-        <TextBox x:Name="txtDniCliente" Grid.Column="1" Grid.Row="1" Text="{Binding dni}"/>
+        <TextBox x:Name="txtDniCliente" Grid.Column="1" Grid.Row="1" Text="{Binding dni}" IsReadOnly="True"/>
         <TextBox x:Name="txtNombreCliente" Grid.Column="1" Grid.Row="2" Text="{Binding nombre}"/>
         <TextBox x:Name="txtApellCliente" Grid.Column="1" Grid.Row="3" Text="{Binding apellidos}"/>
         <TextBox x:Name="txtEmailCliente" Grid.Column="1" Grid.Row="4" Text="{Binding email}"/>
