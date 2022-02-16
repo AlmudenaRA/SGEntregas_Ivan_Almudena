@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="SGEntregas_Ivan_Almudena.Ventanas.Tablet.CardPedidosStackPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Tablet"
+             xmlns:converters="clr-namespace:SGEntregas_Ivan_Almudena.Converters"           
+             xmlns:component="clr-namespace:SGEntregas_Ivan_Almudena.Components"   
+             xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="root">
+    <UserControl.Resources>
+        <vm:CollectionViewModel x:Key="ColeccionVM"/>
+        <converters:GreaterThanConverter x:Key="GreaterThanconverter"/>
+    </UserControl.Resources>
+    <StackPanel x:Name="listaPedidosCli">
+        <StackPanel.Style>
+            <Style TargetType="StackPanel">
+                <Style.Triggers>
+                    <!-- Se le pasa el ancho actual de la ventana. 
+                    Si el ancho es de mi ventana es mayor de 750 cambia la orientación a horizontal-->
+                    <DataTrigger Binding="{Binding ActualWidth, ElementName=root,
+                        Converter={StaticResource GreaterThanconverter}, ConverterParameter=750}" Value="true">
+                        <Setter Property="Orientation" Value="Horizontal"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </StackPanel.Style>       
+    </StackPanel>
+</UserControl>

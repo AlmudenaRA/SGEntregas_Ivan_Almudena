@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
     /// </summary>
     public partial class ClientesTablet : Window
     {
+        CollectionViewModel cvm;
+
         public ClientesTablet()
         {
             InitializeComponent();
+            cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -33,7 +37,11 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         {
             if(listaClien.SelectedIndex != -1)
             {
-
+                //var provin = cvm.objBD.provincias.Find(cbProvin.SelectedIndex + 1);
+                string dni = cvm.ListaClientes[listaClien.SelectedIndex].dni;
+                //CardPedidosStackPanelView cpv = CardPedidosStackPanelView(cvm.ListaClientes[listaClien.SelectedIndex]);
+                PedidosClientTablet pedidosTab = new PedidosClientTablet(dni);
+                pedidosTab.ShowDialog();
             }
             else
             {
