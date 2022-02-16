@@ -38,10 +38,12 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             if(listaClien.SelectedIndex != -1)
             {
                 //var provin = cvm.objBD.provincias.Find(cbProvin.SelectedIndex + 1);
-                string dni = cvm.ListaClientes[listaClien.SelectedIndex].dni;
+                //var dni = cvm.ListaClientes[listaClien.SelectedIndex];
                 //CardPedidosStackPanelView cpv = CardPedidosStackPanelView(cvm.ListaClientes[listaClien.SelectedIndex]);
-                PedidosClientTablet pedidosTab = new PedidosClientTablet(dni);
-                pedidosTab.ShowDialog();
+                //PedidosClientTablet pedidosTab = new PedidosClientTablet();
+                //pedidosTab.ShowDialog();
+                PedidosPorCliente pcli = new PedidosPorCliente();
+                pcli.ShowDialog();
             }
             else
             {
