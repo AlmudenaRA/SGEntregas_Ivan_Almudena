@@ -28,7 +28,7 @@ namespace SGEntregas_Ivan_Almudena.Components
 
         // Using a DependencyProperty as the backing store for FechaPedido.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty FechaPedidoProperty =
-            DependencyProperty.Register("FechaPedido", typeof(DateTime), typeof(TarjetPedido), new PropertyMetadata(DateTime.Now));
+            DependencyProperty.Register("FechaPedido", typeof(DateTime), typeof(TarjetPedido), new PropertyMetadata());
 
         public DateTime? FechaEntrega
         {

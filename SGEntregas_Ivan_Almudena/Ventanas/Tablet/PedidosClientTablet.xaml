@@ -4,65 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Tablet"
-         
+        xmlns:converters="clr-namespace:SGEntregas_Ivan_Almudena.Converters"           
+        xmlns:component="clr-namespace:SGEntregas_Ivan_Almudena.Components"   
+        xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
         Title="PedidosClientTablet" Height="450" Width="800" MinWidth="200" MaxWidth="800"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
-        >
-    <!--<Window.Resources>
+        Name="root">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF46CC8D" />
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
         <vm:CollectionViewModel x:Key="ColeccionVM"/>
         <converters:GreaterThanConverter x:Key="GreaterThanconverter"/>
-    </Window.Resources>-->
-    <!--<StackPanel x:Name="listaPedidosCli">
-        <StackPanel.Style>
-            <Style TargetType="StackPanel">
-                <Style.Triggers>
-                    --><!-- Se le pasa el ancho actual de la ventana. 
-                    Si el ancho es de mi ventana es mayor de 750 cambia la orientación a horizontal--><!--
-                    <DataTrigger Binding="{Binding ActualWidth, ElementName=root,
-                        Converter={StaticResource GreaterThanconverter}, ConverterParameter=750}" Value="true">
-                        <Setter Property="Orientation" Value="Horizontal"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </StackPanel.Style>        
-
-    </StackPanel>-->
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="0.25*"/>
-        </Grid.RowDefinitions>
-        <StackPanel x:Name="listaPedidosCli">
-            <StackPanel.Style>
-                <Style TargetType="StackPanel">
-                    <Style.Triggers>
-                        --><!-- Se le pasa el ancho actual de la ventana. 
-                    Si el ancho es de mi ventana es mayor de 750 cambia la orientación a horizontal--><!--
-                        <DataTrigger Binding="{Binding ActualWidth, ElementName=root,
-                        Converter={StaticResource GreaterThanconverter}, ConverterParameter=750}" Value="true">
-                            <Setter Property="Orientation" Value="Horizontal"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </StackPanel.Style>
-        </StackPanel>
-        <Button x:Name="btnVolver" Grid.Row="1" Height="50" Width="50" Margin="20" BorderThickness="0"
-                HorizontalAlignment="Right" Background="Transparent" Click="btnVolver_Click">
-            <Image Source="/images/return.png" Stretch="Fill" />
-        </Button>
-    </Grid>-->
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <local:CardPedidosStackPanelView/>                   
-        </ScrollViewer>
+        <StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+                <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ActualWidth, ElementName=root,
+                                    Converter={StaticResource GreaterThanconverter}, ConverterParameter=750}" Value="true">
+                                    <Setter Property="Orientation" Value="Horizontal"/>
+                                </DataTrigger>
+                            </Style.Triggers>                            
+                        </Style>
+                    </StackPanel.Style>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
         <Button x:Name="btnVolver" Grid.Row="1" Height="50" Width="50" Margin="20" BorderThickness="0"
-                HorizontalAlignment="Right" Background="Transparent" Click="btnVolver_Click">
-            <Image Source="/images/return.png" Stretch="Fill" />
-        </Button>
-    </Grid>
+            HorizontalAlignment="Right" Background="Transparent" Click="btnVolver_Click">
+                <Image Source="/images/return.png" Stretch="Fill" />
+        </Button>           
+        
+    </Grid>   
 </Window>

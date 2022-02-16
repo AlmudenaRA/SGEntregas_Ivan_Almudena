@@ -115,17 +115,11 @@
     <Compile Include="Ventanas\Escritorio\UpdClientePC.xaml.cs">
       <DependentUpon>UpdClientePC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Tablet\CardPedidosStackPanelView.xaml.cs">
-      <DependentUpon>CardPedidosStackPanelView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Ventanas\Tablet\ClientesTablet.xaml.cs">
       <DependentUpon>ClientesTablet.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Tablet\PedidosClientTablet.xaml.cs">
       <DependentUpon>PedidosClientTablet.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\Tablet\PedidosPorCliente.xaml.cs">
-      <DependentUpon>PedidosPorCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CollectionViewModel.cs" />
     <Page Include="Components\TarjetPedido.xaml">
@@ -190,19 +184,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ventanas\Tablet\CardPedidosStackPanelView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Ventanas\Tablet\ClientesTablet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Tablet\PedidosClientTablet.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ventanas\Tablet\PedidosPorCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

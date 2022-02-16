@@ -21,27 +21,17 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
     /// </summary>
     public partial class PedidosClientTablet : Window
     {
-        //CollectionViewModel cvm;        
-        //clientes cliente;
-        //pedidos ped;
-        //TarjetPedido tp;
-        //string cli;
-        //public PedidosClientTablet(clientes cli)
-        //{
-        //    InitializeComponent();
-        //    cvm = cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
-        //    this.cliente = cli;
-        //    this.DataContext = cliente.pedidos;
-        //    cargarTarjet();
-        //}
+        CollectionViewModel cvm;
+        TarjetPedido tp;
+        string dni;
 
-        public PedidosClientTablet()
+        public PedidosClientTablet(string dni)
         {
             InitializeComponent();
-            //cvm = cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
-            //this.cliente = cli;
-            //this.DataContext = ped;
-            //cargarTarjet();
+            cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
+            this.dni = dni;
+            cvm.CargarPedidosCliente(this.dni);
+            cargarTarjetas();
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -49,27 +39,22 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             this.Close();
         }
 
-        //private void cargarTarjet()
-        //{
-        //    var pedi = from pe in cvm.objBD.pedidos
-        //               select pe;
+        private void cargarTarjetas()
+        {
+            foreach (var item in cvm.ListaPedidos)
+            {
+                if (item.fecha_entrega == null)
+                {
+                    tp = new TarjetPedido();
+                    tp.FechaPedido = item.fecha_pedido;
+                    tp.FechaEntrega = item.fecha_entrega;
+                    tp.Descripcion = item.descripcion;
 
-        //    foreach (var item in pedi.ToList())
-        //    {
-        //        if (item.fecha_entrega != null)
-        //        {
-        //            tp = new TarjetPedido();
-        //            tp.FechaPedido = item.fecha_pedido;
-        //            tp.FechaEntrega = item.fecha_entrega;
-        //            tp.Descripcion = item.descripcion;
-
-        //            listaPedidosCli.Children.Add(tp);
-        //        }
-
-        //    }
-
-        //}
-
+                    listaPedidosCli.Children.Add(tp);
+                    
+                }
+            }
+        }
     }
 }
 
