@@ -55,17 +55,19 @@ namespace SGEntregas_Ivan_Almudena.Components
 
         CollectionViewModel cvm;
         pedidos pedido;
+        PedidosClientTablet pc;
 
-        public TarjetPedido(CollectionViewModel cvm, pedidos ped)
+        public TarjetPedido(CollectionViewModel cvm, pedidos ped, PedidosClientTablet pedidosClientTablet)
         {
             InitializeComponent();
             this.cvm = cvm;
             this.pedido = ped;
+            this.pc = pedidosClientTablet;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DatosPedido frm = new DatosPedido(this.cvm, this.pedido);
+            DatosPedido frm = new DatosPedido(this.cvm, this.pedido, this.pc);
             frm.ShowDialog();
         }
     }

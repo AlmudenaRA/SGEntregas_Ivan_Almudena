@@ -25,14 +25,16 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         pedidos pedido;
         pedidos copiaPedido;
         byte[] dibujoCanvas;
+        PedidosClientTablet pc;
 
-        public DatosPedido(CollectionViewModel cvm, pedidos ped)
+        public DatosPedido(CollectionViewModel cvm, pedidos ped, PedidosClientTablet pc)
         {
             InitializeComponent();
             this.cvm = cvm;
             this.pedido = ped;
             copiaPedido = pedidos.ShallowCopyEntity(pedido);
             this.DataContext = copiaPedido;
+            this.pc = pc;
         }
 
         private void actualizarProperties(pedidos pedidoOrigen, pedidos pedidoDestino)
@@ -56,6 +58,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             {
                 actualizarProperties(copiaPedido, pedido);
                 MessageBox.Show("Pedido modificado correctamente");
+                this.pc.cargarTarjetas();
                 this.Close();
             }
             else
