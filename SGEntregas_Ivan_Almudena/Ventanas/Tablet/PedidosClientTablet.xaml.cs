@@ -43,28 +43,20 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         private void cargarTarjetas()
         {
 
-            ArrayList listaPedidos = new ArrayList();
-
             foreach (var item in cvm.ListaPedidos)
             {
                 if (item.fecha_entrega == null)
                 {
-                    tp = new TarjetPedido();
+                    tp = new TarjetPedido(this.cvm, item);
                     tp.FechaPedido = item.fecha_pedido;
                     tp.FechaEntrega = item.fecha_entrega;
                     tp.Descripcion = item.descripcion;
-
                     listaPedidosCli.Children.Add(tp);
-
                     
                 }
             }
         }
 
-        private void listaPedidosCli_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
     }
 }
 

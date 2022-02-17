@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
-                <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20" MouseDown="listaPedidosCli_MouseDown">
+                <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20">
                     <StackPanel.Style>
                         <Style TargetType="StackPanel">
                             <Style.Triggers>
