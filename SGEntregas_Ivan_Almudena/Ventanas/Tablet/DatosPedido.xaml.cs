@@ -28,5 +28,15 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         {
             this.Close();
         }
+
+        private void btnBorrar_Click(object sender, RoutedEventArgs e)
+        {
+            firmaCanvas.Strokes.Clear();
+        }
+
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

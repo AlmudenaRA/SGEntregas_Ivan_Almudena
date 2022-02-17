@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.Ventanas.Tablet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,7 +59,8 @@ namespace SGEntregas_Ivan_Almudena.Components
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(this.Descripcion);
+            DatosPedido frm = new DatosPedido();
+            frm.ShowDialog();
         }
     }
 }
