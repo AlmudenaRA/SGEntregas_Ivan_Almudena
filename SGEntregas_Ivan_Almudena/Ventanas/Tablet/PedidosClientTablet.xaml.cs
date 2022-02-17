@@ -1,6 +1,7 @@
 ﻿using SGEntregas_Ivan_Almudena.Components;
 using SGEntregas_Ivan_Almudena.ViewModel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
 
         private void cargarTarjetas()
         {
+
+            ArrayList listaPedidos = new ArrayList();
+
             foreach (var item in cvm.ListaPedidos)
             {
                 if (item.fecha_entrega == null)
@@ -51,9 +55,15 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
                     tp.Descripcion = item.descripcion;
 
                     listaPedidosCli.Children.Add(tp);
+
                     
                 }
             }
+        }
+
+        private void listaPedidosCli_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

@@ -55,5 +55,10 @@ namespace SGEntregas_Ivan_Almudena.Components
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(this.Descripcion);
+        }
     }
 }

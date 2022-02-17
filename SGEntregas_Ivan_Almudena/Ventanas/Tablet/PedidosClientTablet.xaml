@@ -9,7 +9,7 @@
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
         Title="PedidosClientTablet" Height="450" Width="800" MinWidth="200" MaxWidth="800"
-        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
         Name="root">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
-                <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20">
+                <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20" MouseDown="listaPedidosCli_MouseDown">
                     <StackPanel.Style>
                         <Style TargetType="StackPanel">
                             <Style.Triggers>
@@ -36,7 +36,7 @@
                                     Converter={StaticResource GreaterThanconverter}, ConverterParameter=750}" Value="true">
                                     <Setter Property="Orientation" Value="Horizontal"/>
                                 </DataTrigger>
-                            </Style.Triggers>                            
+                            </Style.Triggers>
                         </Style>
                     </StackPanel.Style>
                 </StackPanel>

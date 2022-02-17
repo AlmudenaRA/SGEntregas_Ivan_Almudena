@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         d:DesignHeight="450" d:DesignWidth="600"        
         DataContext="{Binding RelativeSource={RelativeSource Self}}">
-    <Border Background="#FF46CC8D" BorderBrush="White" BorderThickness="3" CornerRadius="10">
+    <Border Background="#FF46CC8D" BorderBrush="White" BorderThickness="3" CornerRadius="10" Margin="15" MouseDown="Border_MouseDown">
         <Border.Effect>
             <DropShadowEffect Color="LightGray" ShadowDepth="5" BlurRadius="5" Opacity=".75"/>
         </Border.Effect>
@@ -28,6 +28,5 @@
                 <TextBlock Margin="5" Foreground="White" HorizontalAlignment="Center" Text="{Binding Descripcion}"/>
             </StackPanel>
         </StackPanel>
-
     </Border>
 </UserControl>
