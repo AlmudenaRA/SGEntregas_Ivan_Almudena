@@ -55,7 +55,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             if (!Utils.comprobarVacios(txtDescripcion.Text) && !Utils.comprobarVacios(dtpFechaPedido.SelectedDate.ToString()) && dibujoCanvas != null)
             {
                 actualizarProperties(copiaPedido, pedido);
-                MessageBox.Show("Modificado correctamente");
+                MessageBox.Show("Pedido modificado correctamente");
                 this.Close();
             }
             else
