@@ -69,6 +69,10 @@
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Comandos.cs" />
+    <Compile Include="Components\TarjetPedido.xaml.cs">
+      <DependentUpon>TarjetPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\GreaterThanConverter.cs" />
     <Compile Include="Converters\IndexRestaConverter.cs" />
     <Compile Include="EntregasModel.cs">
       <AutoGen>True</AutoGen>
@@ -114,7 +118,17 @@
     <Compile Include="Ventanas\Tablet\ClientesTablet.xaml.cs">
       <DependentUpon>ClientesTablet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Tablet\DatosPedido.xaml.cs">
+      <DependentUpon>DatosPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Tablet\PedidosClientTablet.xaml.cs">
+      <DependentUpon>PedidosClientTablet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CollectionViewModel.cs" />
+    <Page Include="Components\TarjetPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -174,6 +188,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Tablet\ClientesTablet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\DatosPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\PedidosClientTablet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Tablet"
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
-        Title="ClientesTablet" Height="450" Width="700" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="ClientesTablet" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None">
     <Window.Resources>
         <vm:CollectionViewModel x:Key="ColeccionVM"/>
@@ -30,8 +30,7 @@
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF46CC8D" />
-            <GradientStop Color="White" Offset="1"/>
-            
+            <GradientStop Color="White" Offset="1"/>            
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -40,7 +39,7 @@
             <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
         <ListView x:Name="listaClien" ItemsSource="{Binding Source={StaticResource ColeccionVM}, Path=ListaClientes}" 
-                 HorizontalContentAlignment="Stretch" Margin="50,20" Background="Transparent">            
+                 HorizontalContentAlignment="Stretch" Margin="50,20" Background="Transparent" BorderThickness="0">            
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Border Style="{StaticResource Brd}">
