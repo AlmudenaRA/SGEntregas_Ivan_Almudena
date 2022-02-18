@@ -1,4 +1,5 @@
-﻿using SGEntregas_Ivan_Almudena.Components;
+﻿using Microsoft.Win32;
+using SGEntregas_Ivan_Almudena.Components;
 using SGEntregas_Ivan_Almudena.ViewModel;
 using System;
 using System.Collections;
@@ -32,6 +33,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             cvm = (CollectionViewModel)this.Resources["ColeccionVM"];
             this.dni = dni;
             cvm.CargarPedidosCliente(this.dni);
+            SystemEvents.DisplaySettingsChanged += Current_SizeChanged;
             cargarTarjetas();
         }
 
@@ -52,12 +54,22 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
                     tp.FechaPedido = item.fecha_pedido;
                     tp.FechaEntrega = item.fecha_entrega;
                     tp.Descripcion = item.descripcion;
-                    listaPedidosCli.Children.Add(tp);
-                    
+                    listaPedidosCli.Children.Add(tp);                    
                 }
             }
         }
 
+        private void Current_SizeChanged(object sender, EventArgs eventArgs)
+        {
+            if (SystemParameters.PrimaryScreenWidth > SystemParameters.PrimaryScreenHeight)
+            {
+                listaPedidosCli.Orientation = Orientation.Horizontal;
+            }
+            else
+            {
+                listaPedidosCli.Orientation = Orientation.Vertical;
+            }
+        }
     }
 }
 
