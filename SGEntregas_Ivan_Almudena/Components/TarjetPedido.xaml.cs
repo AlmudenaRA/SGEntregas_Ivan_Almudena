@@ -70,5 +70,11 @@ namespace SGEntregas_Ivan_Almudena.Components
             DatosPedido frm = new DatosPedido(this.cvm, this.pedido, this.pc);
             frm.ShowDialog();
         }
+
+        private void Border_TouchDown(object sender, TouchEventArgs e)
+        {
+            DatosPedido frm = new DatosPedido(this.cvm, this.pedido, this.pc);
+            frm.ShowDialog();
+        }
     }
 }
