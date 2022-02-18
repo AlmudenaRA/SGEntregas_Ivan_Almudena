@@ -79,8 +79,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
                 if (canvas.Strokes.Count > 0)
                 {
                     canvas.Strokes.Save(ms, true);
-                    byte[] unencryptedSignature = ms.ToArray();
-                    MessageBox.Show(unencryptedSignature.Length.ToString());
+                    byte[] unencryptedSignature = ms.ToArray();                   
                     return unencryptedSignature;
                 }
                 else
