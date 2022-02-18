@@ -9,7 +9,7 @@
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
         Title="PedidosClientTablet" Height="450" Width="800" MinWidth="200" MaxWidth="800"
-        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize"
         Name="root">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -21,31 +21,25 @@
         <vm:CollectionViewModel x:Key="ColeccionVM"/>
         <converters:GreaterThanConverter x:Key="GreaterThanconverter"/>
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="0.25*"/>
-        </Grid.RowDefinitions>
-        <StackPanel>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20">
-                    <StackPanel.Style>
-                        <Style TargetType="StackPanel">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding ActualWidth, ElementName=root,
+
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="30">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ActualWidth, ElementName=root,
                                     Converter={StaticResource GreaterThanconverter}, ConverterParameter=750}" Value="true">
-                                    <Setter Property="Orientation" Value="Horizontal"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </StackPanel.Style>
-                </StackPanel>
-            </ScrollViewer>
+                            <Setter Property="Orientation" Value="Horizontal"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
         </StackPanel>
-        <Button x:Name="btnVolver" Grid.Row="1" Height="50" Width="50" Margin="20" BorderThickness="0"
+    </ScrollViewer>
+    <!--<Button x:Name="btnVolver" Grid.Row="1" Height="50" Width="50" Margin="20" BorderThickness="0"
             HorizontalAlignment="Right" Background="Transparent" Click="btnVolver_Click">
-                <Image Source="/images/return.png" Stretch="Fill" />
-        </Button>           
-        
-    </Grid>   
+        <Image Source="/images/return.png" Stretch="Fill" />
+    </Button>-->
 </Window>
+    
