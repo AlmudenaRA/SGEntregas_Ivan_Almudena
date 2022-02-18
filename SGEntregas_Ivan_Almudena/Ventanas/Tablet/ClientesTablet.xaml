@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SGEntregas_Ivan_Almudena.Ventanas.Tablet"
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
-        Title="ClientesTablet" Height="450" Width="700" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="ClientesTablet" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None">
     <Window.Resources>
         <vm:CollectionViewModel x:Key="ColeccionVM"/>
