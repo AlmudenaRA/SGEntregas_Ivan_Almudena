@@ -27,7 +27,7 @@
             <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="20">
                     <StackPanel.Style>
                         <Style TargetType="StackPanel">

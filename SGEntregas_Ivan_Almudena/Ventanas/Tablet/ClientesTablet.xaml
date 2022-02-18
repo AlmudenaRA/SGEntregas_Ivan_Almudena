@@ -39,7 +39,7 @@
             <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
         <ListView x:Name="listaClien" ItemsSource="{Binding Source={StaticResource ColeccionVM}, Path=ListaClientes}" 
-                 HorizontalContentAlignment="Stretch" Margin="50,20" Background="Transparent">            
+                 HorizontalContentAlignment="Stretch" Margin="50,20" Background="Transparent" BorderThickness="0">            
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Border Style="{StaticResource Brd}">
