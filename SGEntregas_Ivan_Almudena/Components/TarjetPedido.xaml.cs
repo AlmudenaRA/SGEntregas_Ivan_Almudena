@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SGEntregas_Ivan_Almudena.Ventanas.Tablet;
+using SGEntregas_Ivan_Almudena.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,9 +53,28 @@ namespace SGEntregas_Ivan_Almudena.Components
         public static readonly DependencyProperty DescripcionProperty =
             DependencyProperty.Register("Descripcion", typeof(string), typeof(TarjetPedido), new PropertyMetadata(string.Empty));
 
-        public TarjetPedido()
+        CollectionViewModel cvm;
+        pedidos pedido;
+        PedidosClientTablet pc;
+
+        public TarjetPedido(CollectionViewModel cvm, pedidos ped, PedidosClientTablet pedidosClientTablet)
         {
             InitializeComponent();
+            this.cvm = cvm;
+            this.pedido = ped;
+            this.pc = pedidosClientTablet;
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DatosPedido frm = new DatosPedido(this.cvm, this.pedido, this.pc);
+            frm.ShowDialog();
+        }
+
+        private void Border_TouchDown(object sender, TouchEventArgs e)
+        {
+            DatosPedido frm = new DatosPedido(this.cvm, this.pedido, this.pc);
+            frm.ShowDialog();
         }
     }
 }

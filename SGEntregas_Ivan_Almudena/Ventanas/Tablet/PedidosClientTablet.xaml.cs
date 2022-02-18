@@ -1,6 +1,7 @@
 ﻿using SGEntregas_Ivan_Almudena.Components;
 using SGEntregas_Ivan_Almudena.ViewModel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,22 +40,24 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             this.Close();
         }
 
-        private void cargarTarjetas()
+        public void cargarTarjetas()
         {
+            listaPedidosCli.Children.Clear();
+
             foreach (var item in cvm.ListaPedidos)
             {
                 if (item.fecha_entrega == null)
                 {
-                    tp = new TarjetPedido();
+                    tp = new TarjetPedido(this.cvm, item, this);
                     tp.FechaPedido = item.fecha_pedido;
                     tp.FechaEntrega = item.fecha_entrega;
                     tp.Descripcion = item.descripcion;
-
                     listaPedidosCli.Children.Add(tp);
                     
                 }
             }
         }
+
     }
 }
 

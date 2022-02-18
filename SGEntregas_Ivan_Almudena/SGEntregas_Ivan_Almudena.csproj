@@ -118,6 +118,9 @@
     <Compile Include="Ventanas\Tablet\ClientesTablet.xaml.cs">
       <DependentUpon>ClientesTablet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Tablet\DatosPedido.xaml.cs">
+      <DependentUpon>DatosPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Tablet\PedidosClientTablet.xaml.cs">
       <DependentUpon>PedidosClientTablet.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Tablet\ClientesTablet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\DatosPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
