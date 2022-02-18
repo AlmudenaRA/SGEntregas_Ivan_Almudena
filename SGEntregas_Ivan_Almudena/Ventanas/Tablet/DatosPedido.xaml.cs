@@ -42,7 +42,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             pedidoDestino.fecha_pedido = pedidoOrigen.fecha_pedido;
             pedidoDestino.descripcion = pedidoOrigen.descripcion;
             pedidoDestino.fecha_entrega = DateTime.Now;
-            pedidoDestino.firma = pedidoOrigen.firma;
+            pedidoDestino.firma = this.dibujoCanvas;
             this.cvm.objBD.SaveChanges();
         }
 
@@ -80,6 +80,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
                 {
                     canvas.Strokes.Save(ms, true);
                     byte[] unencryptedSignature = ms.ToArray();
+                    MessageBox.Show(unencryptedSignature.Length.ToString());
                     return unencryptedSignature;
                 }
                 else
