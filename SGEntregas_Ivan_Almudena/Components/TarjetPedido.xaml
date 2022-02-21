@@ -13,15 +13,15 @@
         </Border.Effect>
 
         <StackPanel>
+            <StackPanel Margin="10" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Margin="5" Foreground="White" FontWeight="Bold"  Text="Pedido: " FontSize="15"/>
+                <TextBlock Margin="5" Foreground="White" Text="{Binding Id_pedido}"/>
+            </StackPanel>
+            
             <StackPanel Margin="10"  Visibility="Visible">
                 <TextBlock Margin="5" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Text="Fecha del pedido" FontSize="15"/>
                 <TextBlock Margin="5" Foreground="White" HorizontalAlignment="Center" Text="{Binding FechaPedido, StringFormat=dd/MM/yyyy}"/>
-            </StackPanel>
-
-            <StackPanel Margin="10" Visibility="Visible">
-                <TextBlock Margin="5" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Text="Fecha de entrega" FontSize="15"/>
-                <TextBlock Margin="5" Foreground="White" HorizontalAlignment="Center" Text="{Binding FechaEntrega, StringFormat=dd/MM/yyyy}"/>
-            </StackPanel>
+            </StackPanel>            
 
             <StackPanel Margin="10"  Visibility="Visible">
                 <TextBlock Margin="5" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Text="Descripción" FontSize="15"/>

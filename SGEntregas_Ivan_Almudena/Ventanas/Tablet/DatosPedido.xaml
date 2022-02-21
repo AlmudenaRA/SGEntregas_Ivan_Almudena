@@ -26,19 +26,20 @@
             <RowDefinition Height="*"/>
             <!-- Botones -->
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>        
+        <TextBlock Text="Fecha del pedido:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20,0,0"/>
+        <TextBlock Text="{Binding fecha_pedido, StringFormat=dd/MM/yyyy}" Margin="10,20,0,0" Grid.Column="1"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Fecha del pedido:"/>
-            <DatePicker Name="dtpFechaPedido" Margin="10,0,0,0" MinWidth="200" SelectedDate="{Binding fecha_pedido}"/>
-        </StackPanel>
+        <TextBlock Text="Descripción:" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Margin="0,20,0,0"/>
+        <TextBox Name="txtDescripcion" Margin="10,20,0,0" MinWidth="200" Height="100" Width="221" MaxLines="15"
+                    TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  Text="{Binding descripcion}"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"  Grid.Row="1"  Grid.Column="1" IsReadOnly="True"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Descripción:"/>
-            <TextBox Name="txtDescripcion" Margin="10,0,0,0" MinWidth="200" Height="100" Width="221" MaxLines="15"
-                     TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  Text="{Binding descripcion}"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border BorderBrush="#FF46CC8D" BorderThickness="2">
                 <InkCanvas Name="firmaCanvas" Height="125" Width="200" Strokes="{Binding firma}"/>
             </Border>
@@ -46,7 +47,7 @@
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0" Click="btnBorrar_Click"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
             <Button x:Name="btnAceptar" Content="Aceptar" Margin="10,10,20,10" Height="30" MinWidth="70"
                     Background="#FF46CC8D" Foreground="White" BorderThickness="0"
                     Click="btnAceptar_Click" Width="90"/>

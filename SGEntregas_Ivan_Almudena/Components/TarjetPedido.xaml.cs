@@ -22,6 +22,15 @@ namespace SGEntregas_Ivan_Almudena.Components
     /// </summary>
     public partial class TarjetPedido : UserControl
     {
+        public int Id_pedido
+        {
+            get { return (int)GetValue(Id_pedidoProperty); }
+            set { SetValue(Id_pedidoProperty, value); }
+        }
+
+        public static readonly DependencyProperty Id_pedidoProperty =
+            DependencyProperty.Register("Id_pedido", typeof(int), typeof(TarjetPedido), new PropertyMetadata());
+
         public DateTime FechaPedido
         {
             get { return (DateTime)GetValue(FechaPedidoProperty); }

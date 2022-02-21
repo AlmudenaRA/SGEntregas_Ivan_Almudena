@@ -45,18 +45,24 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         public void cargarTarjetas()
         {
             listaPedidosCli.Children.Clear();
-
+            
             foreach (var item in cvm.ListaPedidos)
             {
                 if (item.fecha_entrega == null)
                 {
                     tp = new TarjetPedido(this.cvm, item, this);
+                    tp.Id_pedido = item.id_pedido;
                     tp.FechaPedido = item.fecha_pedido;
-                    tp.FechaEntrega = item.fecha_entrega;
                     tp.Descripcion = item.descripcion;
-                    listaPedidosCli.Children.Add(tp);                    
+                    listaPedidosCli.Children.Add(tp);
                 }
             }
+            if (tp == null)
+            {
+                MessageBox.Show("El cliente no tiene pedidos");
+                
+            }
+
         }
 
         private void Current_SizeChanged(object sender, EventArgs eventArgs)

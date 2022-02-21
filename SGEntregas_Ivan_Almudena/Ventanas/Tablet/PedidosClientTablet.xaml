@@ -22,7 +22,6 @@
         <converters:GreaterThanConverter x:Key="GreaterThanconverter"/>
     </Window.Resources>
 
-
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <StackPanel x:Name="listaPedidosCli" VerticalAlignment="Top" Margin="30">
             <StackPanel.Style>
