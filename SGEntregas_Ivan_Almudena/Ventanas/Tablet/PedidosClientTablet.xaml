@@ -8,8 +8,9 @@
         xmlns:component="clr-namespace:SGEntregas_Ivan_Almudena.Components"   
         xmlns:vm="clr-namespace:SGEntregas_Ivan_Almudena.ViewModel"
         mc:Ignorable="d"
-        Title="PedidosClientTablet" Height="450" Width="800" MinWidth="200" MaxWidth="800"
+        Title="PedidosClientTablet" Height="450" Width="800"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize"
+        
         Name="root">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
