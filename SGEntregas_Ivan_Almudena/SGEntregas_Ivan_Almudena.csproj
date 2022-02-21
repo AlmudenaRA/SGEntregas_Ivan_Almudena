@@ -69,6 +69,11 @@
       <DependentUpon>EntregasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Comandos.cs" />
+    <Compile Include="Components\TarjetPedido.xaml.cs">
+      <DependentUpon>TarjetPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\GreaterThanConverter.cs" />
+    <Compile Include="Converters\IndexRestaConverter.cs" />
     <Compile Include="EntregasModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +83,9 @@
     <Compile Include="Utils.cs" />
     <Compile Include="Ventanas\Escritorio\AddClientesPC.xaml.cs">
       <DependentUpon>AddClientesPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Escritorio\AddPedido.xaml.cs">
+      <DependentUpon>AddPedido.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Escritorio\MenuPC.xaml.cs">
       <DependentUpon>MenuPC.xaml</DependentUpon>
@@ -95,13 +103,32 @@
     <Compile Include="Ventanas\Escritorio\GestionClientesPC.xaml.cs">
       <DependentUpon>GestionClientesPC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\ModificarPedido.xaml.cs">
+      <DependentUpon>ModificarPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Escritorio\PedidosCliente.xaml.cs">
       <DependentUpon>PedidosCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Escritorio\SeleccionarCliente.xaml.cs">
       <DependentUpon>SeleccionarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Escritorio\UpdClientePC.xaml.cs">
+      <DependentUpon>UpdClientePC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Tablet\ClientesTablet.xaml.cs">
+      <DependentUpon>ClientesTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Tablet\DatosPedido.xaml.cs">
+      <DependentUpon>DatosPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Tablet\PedidosClientTablet.xaml.cs">
+      <DependentUpon>PedidosClientTablet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CollectionViewModel.cs" />
+    <Page Include="Components\TarjetPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -128,11 +155,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ventanas\Escritorio\AddPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\Escritorio\DetallesPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Escritorio\GestionClientesPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\ModificarPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +180,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Escritorio\MenuPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Escritorio\UpdClientePC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\ClientesTablet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\DatosPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Tablet\PedidosClientTablet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,11 +245,12 @@
       <DependentUpon>EntregasModel.edmx</DependentUpon>
       <LastGenOutput>EntregasModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\tablet.png" />
+    <Resource Include="images\pc.png" />
+    <Resource Include="images\return.png" />
     <Resource Include="images\pedidos.png" />
     <Resource Include="images\clientes.png" />
     <Resource Include="images\exit.jpeg" />
-    <Resource Include="images\pc.jpeg" />
-    <Resource Include="images\tablet.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

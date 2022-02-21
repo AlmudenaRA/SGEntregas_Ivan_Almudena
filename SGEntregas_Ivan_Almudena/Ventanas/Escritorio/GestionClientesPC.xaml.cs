@@ -38,6 +38,8 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         {
             AddClientesPC addClien = new AddClientesPC(cvm);
             addClien.ShowDialog();
+            
+            //listaClien.Items.Refresh();
         }
 
         private void CompruebaModificar(object sender, CanExecuteRoutedEventArgs e)
@@ -49,9 +51,10 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         }
 
         private void EjecutaModificar(object sender, ExecutedRoutedEventArgs e)
-        {           
-
-
+        {
+            int pos = listaClien.SelectedIndex;
+            UpdClientePC updCliente = new UpdClientePC(cvm.ListaClientes[pos], cvm);
+            updCliente.ShowDialog();
         }
 
         private void CompruebaEliminar(object sender, CanExecuteRoutedEventArgs e)
@@ -67,6 +70,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         {
             clientes objCliente = new clientes();
             string dniCliente = cvm.ListaClientes[listaClien.SelectedIndex].dni;
+            objCliente = cvm.objBD.clientes.Find(dniCliente);
 
             //Antes de eliminar comprueba que no tenga pedidos
             if (objCliente.pedidos.Count > 0)
@@ -110,6 +114,17 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
         {
             cvm.guardarDatos();
             System.Windows.MessageBox.Show("Guardado en BD");
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

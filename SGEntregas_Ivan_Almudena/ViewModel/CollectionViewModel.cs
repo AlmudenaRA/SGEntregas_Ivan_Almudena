@@ -11,7 +11,6 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
 {
     public class CollectionViewModel : INotifyPropertyChanged
     {
-
         public CollectionViewModel()
         {
            cargarDatosClientes();
@@ -38,6 +37,17 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             }
         }
 
+        internal void CargarDatosUnicoCliente(string dni)
+        {
+            ListaClientes.Clear();
+
+            var q = from p in objBD.clientes where p.dni.Equals(dni) select p;
+            foreach (var p in q.ToList())
+            {
+                ListaClientes.Add(p);
+            }
+        }
+
         private ClientesCollection _listaClientes = new ClientesCollection();
         public ClientesCollection ListaClientes
         {
@@ -61,12 +71,19 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
         private void cargarDatosClientes()
         {
             ListaClientes.Clear();
-            
-            var q = from p in objBD.clientes orderby p.apellidos ascending select p;
-            foreach (var p in q.ToList())
+
+            var qClient = from clie in objBD.clientes 
+                          orderby clie.apellidos, clie.nombre
+                          select clie;
+            foreach (var cliente in qClient.ToList())
             {
-                ListaClientes.Add(p);
-            }            
+                ListaClientes.Add(cliente);
+            }
+        }
+
+        internal void GuardarDatos()
+        {
+            objBD.SaveChanges();
         }
 
         public void CargarPedidosCliente(string dni)
@@ -77,6 +94,11 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             {
                 ListaPedidos.Add(p);
             }
+        }
+
+        internal void eliminarPedido(pedidos pedido)
+        {
+            objBD.pedidos.Remove(pedido);
         }
 
         public void guardarDatos()

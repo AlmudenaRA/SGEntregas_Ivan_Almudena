@@ -22,7 +22,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
     public partial class SeleccionarCliente : Window
     {
         CollectionViewModel cvm;
-        ArrayList id_clientes = new ArrayList();
+
         public SeleccionarCliente()
         {
             InitializeComponent();
@@ -32,30 +32,28 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void CargarComboClientes()
         {
-            using (entregasEntities objBD = new entregasEntities())
-            {
-                var q = from e in objBD.clientes
-                        select e;
+            var q = from e in cvm.objBD.clientes
+                    orderby e.apellidos, e.nombre
+                    select e;
 
-                foreach (var e in q.ToList())
-                {
-                    cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);
-                    id_clientes.Add(e.dni);
-                }
+            foreach (var e in q.ToList())
+            {
+                cmbUsuarios.Items.Add(e.apellidos + ", " + e.nombre);                
             }
+            
         }
 
-        private void cmbUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
         }
 
         private void btnVerPedidos_Click(object sender, RoutedEventArgs e)
         {
             if (cmbUsuarios.SelectedIndex != -1)
             {
-                string dni = id_clientes[cmbUsuarios.SelectedIndex].ToString();
-                string nombre_apellidos = cmbUsuarios.SelectedItem.ToString();
-                PedidosCliente frm = new PedidosCliente(nombre_apellidos, dni);
+                PedidosCliente frm = new PedidosCliente(cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
+                //PedidosCliente frm = new PedidosCliente(cvm, cvm.ListaClientes[cmbUsuarios.SelectedIndex]);
                 frm.ShowDialog();
             }
         }
