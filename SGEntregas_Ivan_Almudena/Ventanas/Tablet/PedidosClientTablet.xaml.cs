@@ -35,6 +35,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             cvm.CargarPedidosCliente(this.dni);
             SystemEvents.DisplaySettingsChanged += Current_SizeChanged;
             cargarTarjetas();
+            comprobarOrientacion();
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -66,6 +67,11 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         }
 
         private void Current_SizeChanged(object sender, EventArgs eventArgs)
+        {
+            comprobarOrientacion();
+        }
+
+        private void comprobarOrientacion()
         {
             if (SystemParameters.PrimaryScreenWidth > SystemParameters.PrimaryScreenHeight)
             {
