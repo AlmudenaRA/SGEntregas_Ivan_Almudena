@@ -51,8 +51,8 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
                 if (item.fecha_entrega == null)
                 {
                     tp = new TarjetPedido(this.cvm, item, this);
-                    tp.FechaPedido = item.fecha_pedido;
-                    tp.FechaEntrega = item.fecha_entrega;
+                    tp.Id_pedido = item.id_pedido;
+                    tp.FechaPedido = item.fecha_pedido;                    
                     tp.Descripcion = item.descripcion;
                     listaPedidosCli.Children.Add(tp);                    
                 }

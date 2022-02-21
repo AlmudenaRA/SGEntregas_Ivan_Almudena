@@ -38,12 +38,10 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         }
 
         private void actualizarProperties(pedidos pedidoOrigen, pedidos pedidoDestino)
-        {
-            pedidoDestino.fecha_pedido = pedidoOrigen.fecha_pedido;
-            pedidoDestino.descripcion = pedidoOrigen.descripcion;
+        {     
             pedidoDestino.fecha_entrega = DateTime.Now;
             pedidoDestino.firma = this.dibujoCanvas;
-            this.cvm.objBD.SaveChanges();
+            this.cvm.guardarDatos();
         }
 
         private void btnBorrar_Click(object sender, RoutedEventArgs e)
@@ -54,16 +52,16 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
             dibujoCanvas = InkCanvasToByte(firmaCanvas);
-            if (!Utils.comprobarVacios(txtDescripcion.Text) && !Utils.comprobarVacios(dtpFechaPedido.SelectedDate.ToString()) && dibujoCanvas != null)
+            if (!Utils.comprobarVacios(txtDescripcion.Text) && dibujoCanvas != null)
             {
                 actualizarProperties(copiaPedido, pedido);
-                MessageBox.Show("Pedido modificado correctamente");
+                MessageBox.Show("Pedido entregado correctamente");
                 this.pc.cargarTarjetas();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Rellene todo los datos necesarios");
+                MessageBox.Show("Debe firmar la entrega");
             }
         }
 
