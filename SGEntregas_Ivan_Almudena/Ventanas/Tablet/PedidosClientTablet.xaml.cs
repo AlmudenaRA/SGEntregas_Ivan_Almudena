@@ -76,10 +76,14 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             if (SystemParameters.PrimaryScreenWidth > SystemParameters.PrimaryScreenHeight)
             {
                 listaPedidosCli.Orientation = Orientation.Horizontal;
+                this.Height = SystemParameters.PrimaryScreenHeight;
+                this.Width = SystemParameters.PrimaryScreenWidth;
             }
             else
             {
                 listaPedidosCli.Orientation = Orientation.Vertical;
+                this.Height = SystemParameters.PrimaryScreenHeight;
+                this.Width = SystemParameters.PrimaryScreenWidth;
             }
         }
     }
