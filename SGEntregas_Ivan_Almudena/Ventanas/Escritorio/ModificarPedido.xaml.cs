@@ -31,7 +31,11 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
             this.pedido = ped;
             copiaPedido = pedidos.ShallowCopyEntity(pedido);
             this.DataContext = copiaPedido;
-            
+            if (this.pedido.fecha_entrega != null)
+            {
+                dtpFechaPedido.IsEnabled = false;
+                txtDescripcion.IsEnabled= false;
+            }
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
