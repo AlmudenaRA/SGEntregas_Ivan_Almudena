@@ -76,7 +76,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                cvm.GuardarDatos();
+                cvm.guardarDatos();
                 System.Windows.MessageBox.Show("Cambios guardados");
             }
         }

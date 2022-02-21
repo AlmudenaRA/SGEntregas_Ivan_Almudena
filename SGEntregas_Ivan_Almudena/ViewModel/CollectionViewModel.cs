@@ -79,12 +79,7 @@ namespace SGEntregas_Ivan_Almudena.ViewModel
             {
                 ListaClientes.Add(cliente);
             }
-        }
-
-        internal void GuardarDatos()
-        {
-            objBD.SaveChanges();
-        }
+        }      
 
         public void CargarPedidosCliente(string dni)
         {
