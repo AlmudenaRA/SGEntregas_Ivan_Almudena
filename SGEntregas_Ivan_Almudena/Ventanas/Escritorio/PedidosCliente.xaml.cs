@@ -45,7 +45,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
+            SeleccionarCliente frm = new SeleccionarCliente();
             this.Close();
+            frm.Show();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -76,7 +78,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                cvm.GuardarDatos();
+                cvm.guardarDatos();
                 System.Windows.MessageBox.Show("Cambios guardados");
             }
         }

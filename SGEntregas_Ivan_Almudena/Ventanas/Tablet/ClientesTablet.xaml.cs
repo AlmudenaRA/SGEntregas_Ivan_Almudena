@@ -30,7 +30,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow frm = new MainWindow();
             this.Close();
+            frm.Show();
         }
 
         private void btnMostrar_Click(object sender, RoutedEventArgs e)
@@ -38,9 +40,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
             if(listaClien.SelectedIndex != -1)
             {
                 string dni = cvm.ListaClientes[listaClien.SelectedIndex].dni;
-
                 PedidosClientTablet pedidosTab = new PedidosClientTablet(dni);
-                pedidosTab.ShowDialog();
+                pedidosTab.Show();
+                this.Close();
             }
             else
             {
