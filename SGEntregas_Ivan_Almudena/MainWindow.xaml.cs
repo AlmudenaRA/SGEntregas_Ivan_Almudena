@@ -30,13 +30,15 @@ namespace SGEntregas_Ivan_Almudena
         private void btnTablet_Click(object sender, RoutedEventArgs e)
         {
             ClientesTablet clieTablet = new ClientesTablet();
-            clieTablet.ShowDialog();
+            this.Close();
+            clieTablet.Show();
         }
 
         private void btnPc_Click(object sender, RoutedEventArgs e)
         {
             MenuPC menu_pc = new MenuPC();
-            menu_pc.ShowDialog();
+            this.Close();
+            menu_pc.Show();
         }
 
         private void CompruebaExit(object sender, CanExecuteRoutedEventArgs e)

@@ -43,7 +43,7 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnUpd_Click(object sender, RoutedEventArgs e)
         {
-            if (txtDniCliente.Text.Length == 10 && !Utils.comprobarVacios(txtNombreCliente.Text)
+            if (!Utils.comprobarVacios(txtNombreCliente.Text)
                 && !Utils.comprobarVacios(txtApellCliente.Text)
                 && !Utils.comprobarVacios(txtDomicilioCliente.Text)
                 && !Utils.comprobarVacios(txtLocalidadCliente.Text)

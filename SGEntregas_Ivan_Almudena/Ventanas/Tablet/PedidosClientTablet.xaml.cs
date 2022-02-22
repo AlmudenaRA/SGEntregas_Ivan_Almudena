@@ -86,6 +86,12 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Tablet
                 this.Width = SystemParameters.PrimaryScreenWidth;
             }
         }
+
+        private void root_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {            
+            ClientesTablet cliTab = new ClientesTablet();
+            cliTab.Show();            
+        }
     }
 }
 

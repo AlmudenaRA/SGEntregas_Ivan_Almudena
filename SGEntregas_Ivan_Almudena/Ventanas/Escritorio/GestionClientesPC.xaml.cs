@@ -118,8 +118,9 @@ namespace SGEntregas_Ivan_Almudena.Ventanas.Escritorio
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
+            MenuPC frm = new MenuPC();
             this.Close();
-
+            frm.Show();
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
